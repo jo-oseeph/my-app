@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         'primary': '#50A8C4',
         'background': '#08020E',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
       }
     },
   },
