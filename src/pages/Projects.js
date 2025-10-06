@@ -1,178 +1,171 @@
 import React from 'react';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
-      image: '🛒',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      github: 'https://github.com/yourusername/ecommerce',
-      live: 'https://your-ecommerce-demo.com',
-      featured: true
+      title: 'Composite Connect',
+      description: 'Green Kenya Hub - A platform promoting environmental sustainability and connecting eco-conscious communities in Kenya.',
+      image: '/images/project.jpg',
+      category: 'Web Development',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      github: 'https://github.com/yourusername/composite-connect',
+      live: 'https://composite-connect-demo.com'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '📋',
-      technologies: ['React', 'Firebase', 'Material-UI', 'Socket.io'],
-      github: 'https://github.com/yourusername/taskmanager',
-      live: 'https://your-taskmanager-demo.com',
-      featured: true
+      title: 'E-Commerce Platform',
+      description: 'A full-stack e-commerce solution with modern design, payment integration, and comprehensive admin dashboard.',
+      image: '/images/project.jpg',
+      category: 'Web Development',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
+      github: 'https://github.com/yourusername/ecommerce',
+      live: 'https://ecommerce-demo.com'
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application that provides current weather data and forecasts using external APIs with beautiful data visualizations.',
-      image: '🌤️',
-      technologies: ['React', 'Chart.js', 'OpenWeather API', 'Tailwind CSS'],
-      github: 'https://github.com/yourusername/weather-app',
-      live: 'https://your-weather-demo.com',
-      featured: false
+      title: 'Task Management App',
+      description: 'Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.',
+      image: '/images/project.jpg',
+      category: 'Web Development',
+      technologies: ['React', 'Firebase', 'Socket.io', 'Material-UI'],
+      github: 'https://github.com/yourusername/taskmanager',
+      live: 'https://taskmanager-demo.com'
     },
     {
       id: 4,
-      title: 'Blog Platform',
-      description: 'A full-featured blog platform with markdown support, comment system, and admin panel for content management.',
-      image: '📝',
-      technologies: ['Next.js', 'MongoDB', 'MDX', 'Vercel'],
-      github: 'https://github.com/yourusername/blog-platform',
-      live: 'https://your-blog-demo.com',
-      featured: false
+      title: 'Weather Dashboard',
+      description: 'Interactive weather application with beautiful visualizations, forecasts, and location-based services.',
+      image: '/images/project.jpg',
+      category: 'Web Development',
+      technologies: ['React', 'Chart.js', 'OpenWeather API', 'Tailwind CSS'],
+      github: 'https://github.com/yourusername/weather-app',
+      live: 'https://weather-demo.com'
     },
     {
       id: 5,
-      title: 'Portfolio Website',
-      description: 'This very portfolio website built with React and Tailwind CSS, showcasing responsive design and modern web development practices.',
-      image: '🎨',
-      technologies: ['React', 'Tailwind CSS', 'React Router'],
-      github: 'https://github.com/yourusername/portfolio',
-      live: 'https://your-portfolio.com',
-      featured: false
+      title: 'Blog Platform',
+      description: 'Feature-rich blogging platform with markdown support, SEO optimization, and content management system.',
+      image: '/images/project.jpg',
+      category: 'Web Development',
+      technologies: ['Next.js', 'MongoDB', 'MDX', 'Vercel'],
+      github: 'https://github.com/yourusername/blog-platform',
+      live: 'https://blog-demo.com'
     },
     {
       id: 6,
       title: 'Chat Application',
-      description: 'Real-time chat application with rooms, private messaging, and file sharing capabilities built with Socket.io.',
-      image: '💬',
-      technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+      description: 'Real-time messaging app with rooms, file sharing, video calls, and end-to-end encryption.',
+      image: '/images/project.jpg',
+      category: 'Web Development',
+      technologies: ['React', 'Node.js', 'Socket.io', 'WebRTC'],
       github: 'https://github.com/yourusername/chat-app',
-      live: 'https://your-chat-demo.com',
-      featured: false
+      live: 'https://chat-demo.com'
     }
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
-
   return (
-    <div>
-      <Section 
-        title="My Projects"
-        subtitle="A showcase of my recent work and personal projects"
-      >
-        {/* Featured Projects */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Featured Projects</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {featuredProjects.map((project) => (
-              <Card key={project.id} className="h-full">
-                <div className="flex flex-col h-full">
-                  <div className="text-6xl mb-4 text-center">{project.image}</div>
-                  <h4 className="text-xl font-bold text-white mb-3">{project.title}</h4>
-                  <p className="text-white/80 mb-4 flex-grow">{project.description}</p>
-                  
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span 
-                          key={tech}
-                          className="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <Button 
-                      variant="secondary" 
-                      size="sm" 
-                      onClick={() => window.open(project.github, '_blank')}
-                    >
-                      GitHub
-                    </Button>
-                    <Button 
-                      size="sm"
-                      onClick={() => window.open(project.live, '_blank')}
-                    >
-                      Live Demo
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+    <div className="min-h-screen bg-background py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            My Projects
+          </h2>
+          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
+            A showcase of my recent work and personal projects that demonstrate my skills 
+            in full-stack development, UI/UX design, and modern web technologies.
+          </p>
         </div>
 
-        {/* Other Projects */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Other Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project) => (
-              <Card key={project.id} className="h-full">
-                <div className="flex flex-col h-full">
-                  <div className="text-4xl mb-3 text-center">{project.image}</div>
-                  <h4 className="text-lg font-bold text-white mb-2">{project.title}</h4>
-                  <p className="text-white/80 text-sm mb-3 flex-grow">{project.description}</p>
-                  
-                  <div className="mb-3">
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span 
-                          key={tech}
-                          className="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full">
-                          +{project.technologies.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <div 
+              key={project.id}
+              className="group relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-primary/50 transition-all duration-300 hover:transform hover:scale-105"
+            >
+              {/* Project Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                {/* Category Badge */}
+                <div className="absolute top-4 right-4">
+                  <span className="bg-green-500 text-black text-xs font-semibold px-3 py-1 rounded-full">
+                    {project.category}
+                  </span>
+                </div>
+              </div>
 
-                  <div className="flex gap-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="flex-1 text-xs"
-                      onClick={() => window.open(project.github, '_blank')}
-                    >
-                      Code
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      className="flex-1 text-xs"
-                      onClick={() => window.open(project.live, '_blank')}
-                    >
-                      Demo
-                    </Button>
+              {/* Card Content */}
+              <div className="p-6">
+                {/* Project Title */}
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+
+                {/* Project Description */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="px-3 py-1 bg-gray-800/80 text-gray-300 text-xs rounded-full border border-gray-600"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white text-sm rounded-lg border border-gray-600 hover:border-primary transition-colors"
+                  >
+                    <FaGithub className="text-sm" />
+                    Code
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-sm" />
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </Section>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <p className="text-white/70 text-lg mb-6">
+            Interested in working together?
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-colors"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
