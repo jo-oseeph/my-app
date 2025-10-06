@@ -91,14 +91,13 @@ const Home = () => {
                   ))}
                 </div>
                 
-                {/* Profile Image Placeholder */}
+                {/* Profile Image */}
                 <div className="relative w-80 h-96 md:w-96 md:h-[28rem] lg:w-[22rem] lg:h-[26rem] xl:w-[26rem] xl:h-[30rem]">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
-                    {/* You can replace this with your actual image */}
-                    <div className="w-full h-full bg-gradient-to-br from-primary/30 to-transparent rounded-2xl flex items-center justify-center">
-                      <span className="text-white/50 text-xl font-medium">Your Photo</span>
-                    </div>
-                  </div>
+                  <img
+                    src="/images/profile.jpg"
+                    alt="Joseph Situma - FullStack Developer"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  />
                   
                   {/* Decorative Elements */}
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full"></div>
