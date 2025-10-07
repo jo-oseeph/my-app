@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa';
+
+import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for fixed header height
+      const offsetTop = element.offsetTop - 80; 
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -25,35 +25,29 @@ const Footer = () => {
     }
   };
 
-  // Social media links - Replace with your actual URLs
+  // Social media links 
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/your-username', // Replace with your GitHub URL
+      href: 'https://github.com/jo-oseeph', 
       icon: <FaGithub className="w-5 h-5" />,
       color: 'hover:text-gray-300'
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/your-username', // Replace with your LinkedIn URL
+      href: 'https://www.linkedin.com/in/joseph-situma-4b6a78363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 
       icon: <FaLinkedinIn className="w-5 h-5" />,
       color: 'hover:text-blue-400'
     },
     {
-      name: 'Instagram',
-      href: 'https://instagram.com/your-username', // Replace with your Instagram URL
-      icon: <FaInstagram className="w-5 h-5" />,
-      color: 'hover:text-pink-400'
-    },
-    {
       name: 'X (Twitter)',
-      href: 'https://x.com/your-username', // Replace with your X/Twitter URL
+      href: 'https://x.com/sejjob?t=Nf-asnb6GKMmqA16b9xplw&s=09', 
       icon: <FaXTwitter className="w-5 h-5" />,
       color: 'hover:text-gray-300'
     },
     {
       name: 'Email',
-      href: 'mailto:your.email@example.com', // Replace with your email
+      href: 'mailto:stumajoseph1261@gmail.com', 
       icon: <FaEnvelope className="w-5 h-5" />,
       color: 'hover:text-primary'
     }
@@ -107,38 +101,15 @@ const Footer = () => {
                   {link.icon}
                 </a>
               ))}
-            </div>
-            
-            
+            </div>    
           </div>
         </div>
-
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white/60 text-sm mb-4 md:mb-0 flex items-center">
-            © {currentYear} Joseph Situma. Built with 
-            <span className="text-green-400 mx-1">💚</span> 
-            and React
-          </div>
-          
-          {/* Back to Top */}
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-primary hover:text-primary/80 transition-colors duration-200 text-sm flex items-center space-x-1 group"
-            >
-              <span>Open source on GitHub</span>
-              <span className="group-hover:-translate-y-1 transition-transform duration-300">↗</span>
-            </button>
-            
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-110"
-              aria-label="Back to top"
-            >
-              ↑
-            </button>
-          </div>
+            © {currentYear} Sejjo Codes. All rights reserved.
+  
+          </div> 
         </div>
       </div>
     </footer>

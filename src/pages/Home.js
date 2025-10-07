@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt, FaChevronDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt,} from 'react-icons/fa';
 
 const Home = () => {
   return (
@@ -15,10 +15,10 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-blue-900/85 to-pink-900/90"></div>
         
         {/* Animated Background Elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+        {/* <div className="absolute top-20 left-10 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
         <div className="absolute top-1/3 right-20 w-6 h-6 bg-purple-500 rounded-full animate-bounce"></div>
         <div className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-blue-400 rounded-full animate-ping"></div>
-        <div className="absolute top-1/2 right-1/3 w-5 h-5 bg-pink-500 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/3 w-5 h-5 bg-pink-500 rounded-full animate-pulse"></div> */}
       </div>
 
       {/* Hero Section */}
@@ -75,13 +75,7 @@ const Home = () => {
                 </button>
               </div>
               
-              {/* Discover More */}
-              <div className="pt-8 animate-bounce">
-                <button className="text-primary hover:text-primary/80 transition-colors duration-300 flex flex-col items-center space-y-2">
-                  <span className="text-sm font-medium">Discover More</span>
-                  <FaChevronDown className="text-lg" />
-                </button>
-              </div>
+             
             </div>
             
             {/* Right Content - Circular Profile Image */}
@@ -100,12 +94,6 @@ const Home = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-400 rounded-full animate-bounce"></div>
-                  <div className="absolute -bottom-6 -left-6 w-12 h-12 border-2 border-purple-500 rounded-full animate-pulse"></div>
-                  <div className="absolute top-1/4 -left-8 w-6 h-6 bg-pink-500 rounded-full animate-ping"></div>
-                  <div className="absolute bottom-1/4 -right-8 w-4 h-4 bg-blue-400 rounded-full animate-bounce"></div>
                 </div>
               </div>
             </div>

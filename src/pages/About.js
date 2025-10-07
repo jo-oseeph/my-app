@@ -97,9 +97,7 @@ const About = () => {
                   className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:transform hover:scale-[1.02]"
                 >
                   <div className="flex items-center gap-4 mb-3">
-                    <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white text-sm">
-                      {milestone.icon}
-                    </div>
+                  
                     <span className="bg-green-500 text-black px-3 py-1 rounded-full text-xs font-bold">
                       {milestone.year}
                     </span>
