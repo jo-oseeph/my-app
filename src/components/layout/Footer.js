@@ -1,18 +1,29 @@
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   // Quick Links for navigation
   const quickLinks = [
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'About', id: 'about' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Contact', id: 'contact' }
   ];
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for fixed header height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   // Social media links - Replace with your actual URLs
   const socialLinks = [
@@ -67,12 +78,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm text-left"
                   >
                     {link.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>

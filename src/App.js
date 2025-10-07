@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout/Layout';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -10,17 +10,41 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <div className="min-h-screen bg-background">
+      {/* Fixed Header */}
+      <Header />
+      
+      {/* Main Content - All sections in one page */}
+      <main>
+        {/* Home Section */}
+        <section id="home">
+          <Home />
+        </section>
+        
+        {/* About Section */}
+        <section id="about">
+          <About />
+        </section>
+        
+        {/* Projects Section */}
+        <section id="projects">
+          <Projects />
+        </section>
+        
+        {/* Skills Section */}
+        <section id="skills">
+          <Skills />
+        </section>
+        
+        {/* Contact Section */}
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
 
