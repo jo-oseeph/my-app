@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaDownload, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     subject: '',
     message: ''
@@ -27,68 +25,55 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       alert('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ fullName: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
   };
 
-  const contactInfo = [
-    {
-      icon: '📧',
-      title: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com'
-    },
-    {
-      icon: '💼',
-      title: 'LinkedIn',
-      value: 'linkedin.com/in/yourprofile',
-      href: 'https://linkedin.com/in/yourprofile'
-    },
-    {
-      icon: '🐙',
-      title: 'GitHub',
-      value: 'github.com/yourusername',
-      href: 'https://github.com/yourusername'
-    },
-    {
-      icon: '📱',
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
-    }
-  ];
-
   return (
-    <div>
-      <Section 
-        title="Get In Touch"
-        subtitle="Let's discuss your project or just say hello!"
-      >
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card>
-            <h3 className="text-2xl font-bold text-white mb-6">Send me a message</h3>
+    <div className="min-h-screen bg-background py-20 px-4 md:px-8 lg:px-16">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+            Let's Work Together
+          </h1>
+          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
+            Ready to bring your ideas to life? I'm always excited to collaborate on innovative 
+            projects and discuss new opportunities.
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Left Side - Contact Form */}
+          <div className="bg-white/5 backdrop-blur-lg border border-primary/20 rounded-2xl p-8">
+            <div className="flex items-center mb-8">
+              <FaPaperPlane className="text-primary text-2xl mr-3" />
+              <h2 className="text-2xl font-bold text-white">Send a Message</h2>
+            </div>
+
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name and Email Row */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-white mb-2">
-                    Name *
+                  <label htmlFor="fullName" className="block text-white font-medium mb-2">
+                    Full Name *
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
-                    placeholder="Your name"
+                    className="w-full px-4 py-3 bg-white/5 border border-primary/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
+                    placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-white mb-2">
-                    Email *
+                  <label htmlFor="email" className="block text-white font-medium mb-2">
+                    Email Address *
                   </label>
                   <input
                     type="email"
@@ -97,14 +82,15 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
-                    placeholder="your.email@example.com"
+                    className="w-full px-4 py-3 bg-white/5 border border-primary/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
+                    placeholder="your@email.com"
                   />
                 </div>
               </div>
               
+              {/* Subject */}
               <div>
-                <label htmlFor="subject" className="block text-white mb-2">
+                <label htmlFor="subject" className="block text-white font-medium mb-2">
                   Subject *
                 </label>
                 <input
@@ -114,13 +100,14 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
+                  className="w-full px-4 py-3 bg-white/5 border border-primary/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
                   placeholder="What's this about?"
                 />
               </div>
               
+              {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-white mb-2">
+                <label htmlFor="message" className="block text-white font-medium mb-2">
                   Message *
                 </label>
                 <textarea
@@ -130,64 +117,143 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all resize-none"
-                  placeholder="Tell me about your project or just say hello!"
+                  className="w-full px-4 py-3 bg-white/5 border border-primary/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary focus:bg-white/10 transition-all resize-none"
+                  placeholder="Tell me about your project, collaboration ideas, or any questions you have..."
                 />
               </div>
               
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full"
+              {/* Submit Button */}
+              <button
+                type="submit"
                 disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </Button>
+                <FaPaperPlane className="text-lg" />
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+              </button>
             </form>
-          </Card>
+          </div>
 
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Let's connect</h3>
-            <p className="text-white/80 mb-8">
-              I'm always open to discussing new opportunities, interesting projects, 
-              or just having a chat about technology and development. Feel free to reach out!
-            </p>
-
-            <div className="space-y-4 mb-8">
-              {contactInfo.map((info, index) => (
-                <a
-                  key={index}
-                  href={info.href}
-                  target={info.href.startsWith('http') ? '_blank' : '_self'}
-                  rel={info.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                  className="flex items-center p-4 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-all group"
-                >
-                  <span className="text-2xl mr-4">{info.icon}</span>
-                  <div>
-                    <h4 className="text-white font-medium group-hover:text-primary transition-colors">
-                      {info.title}
-                    </h4>
-                    <p className="text-white/80 text-sm">{info.value}</p>
+          {/* Right Side - Contact Information */}
+          <div className="space-y-8">
+            {/* Get In Touch Section */}
+            <div className="bg-white/5 backdrop-blur-lg border border-primary/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-white mb-8">Get In Touch</h2>
+              
+              <div className="space-y-6">
+                {/* Email */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <FaEnvelope className="text-primary text-xl" />
                   </div>
-                </a>
-              ))}
+                  <div>
+                    <p className="text-white/60 text-sm">Email</p>
+                    <a 
+                      href="mailto:josephsituma877@gmail.com" 
+                      className="text-white font-medium hover:text-primary transition-colors"
+                    >
+                      josephsituma877@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* GitHub */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <FaGithub className="text-primary text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-white/60 text-sm">GitHub</p>
+                    <a 
+                      href="https://github.com/jo-oseeph" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white font-medium hover:text-primary transition-colors"
+                    >
+                      @jo-oseeph
+                    </a>
+                  </div>
+                </div>
+
+                {/* LinkedIn */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <FaLinkedinIn className="text-primary text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-white/60 text-sm">LinkedIn</p>
+                    <a 
+                      href="https://linkedin.com/in/joseph-situma" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white font-medium hover:text-primary transition-colors"
+                    >
+                      Joseph Situma
+                    </a>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <FaMapMarkerAlt className="text-primary text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-white/60 text-sm">Location</p>
+                    <p className="text-white font-medium">Available Worldwide</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <Card>
-              <h4 className="text-xl font-bold text-white mb-4">Availability</h4>
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                <span className="text-white">Available for new projects</span>
+            {/* Quick Actions Section */}
+            <div className="bg-white/5 backdrop-blur-lg border border-primary/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-white mb-8">Quick Actions</h2>
+              
+              <div className="space-y-4">
+                {/* Send Direct Email */}
+                <a
+                  href="mailto:josephsituma877@gmail.com"
+                  className="w-full flex items-center justify-center space-x-3 py-3 px-6 bg-primary/10 border border-primary/30 rounded-lg text-primary hover:bg-primary/20 transition-all"
+                >
+                  <FaEnvelope className="text-lg" />
+                  <span className="font-medium">Send Direct Email</span>
+                </a>
+
+                {/* Call Me */}
+                <a
+                  href="tel:+254740321377"
+                  className="w-full flex items-center justify-center space-x-3 py-3 px-6 bg-primary/10 border border-primary/30 rounded-lg text-primary hover:bg-primary/20 transition-all"
+                >
+                  <FaPhone className="text-lg" />
+                  <span className="font-medium">Call Me: +254 740 321 377</span>
+                </a>
+
+                {/* Download Resume */}
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="w-full flex items-center justify-center space-x-3 py-3 px-6 bg-primary/10 border border-primary/30 rounded-lg text-primary hover:bg-primary/20 transition-all"
+                >
+                  <FaDownload className="text-lg" />
+                  <span className="font-medium">Download Resume</span>
+                </a>
               </div>
-              <p className="text-white/80 text-sm">
-                Currently accepting new client work and interesting project collaborations. 
-                Typical response time: 24-48 hours.
+            </div>
+
+            {/* Availability Status */}
+            <div className="bg-white/5 backdrop-blur-lg border border-primary/20 rounded-2xl p-8">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <h3 className="text-xl font-bold text-white">Available for New Projects</h3>
+              </div>
+              <p className="text-white/70">
+                Currently accepting full-time opportunities and freelance projects
               </p>
-            </Card>
+            </div>
           </div>
         </div>
-      </Section>
+      </div>
     </div>
   );
 };

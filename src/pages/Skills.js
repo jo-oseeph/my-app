@@ -1,129 +1,191 @@
-import React from 'react';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
+import React, { useEffect, useRef, useState } from 'react';
+import { 
+  FaReact, FaNodeJs, FaPython, FaJs, FaHtml5, FaCss3Alt, 
+  FaVuejs, FaDocker, FaAws, FaGitAlt, FaFigma, FaDatabase 
+} from 'react-icons/fa';
+import { 
+  SiTypescript, SiTailwindcss, SiNextdotjs, SiExpress, 
+  SiMongodb, SiPostgresql, SiGraphql, SiFirebase 
+} from 'react-icons/si';
+import { BiData } from 'react-icons/bi';
+import { MdDesignServices } from 'react-icons/md';
 
 const Skills = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const skillCategories = [
     {
       title: 'Frontend Development',
-      icon: '🎨',
+      icon: <FaReact className="text-4xl text-blue-400" />,
       skills: [
-        { name: 'React', level: 90 },
-        { name: 'JavaScript', level: 95 },
-        { name: 'TypeScript', level: 85 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'Tailwind CSS', level: 90 },
-        { name: 'Next.js', level: 80 },
-        { name: 'Vue.js', level: 70 }
+        { name: 'React/Next.js', level: 95, icon: <FaReact className="text-blue-400" /> },
+        { name: 'TypeScript', level: 90, icon: <SiTypescript className="text-blue-600" /> },
+        { name: 'Tailwind CSS', level: 92, icon: <SiTailwindcss className="text-teal-400" /> },
+        { name: 'Vue.js', level: 85, icon: <FaVuejs className="text-green-500" /> },
+        { name: 'JavaScript ES6+', level: 93, icon: <FaJs className="text-yellow-400" /> },
       ]
     },
     {
-      title: 'Backend Development',
-      icon: '⚙️',
+      title: 'Backend & Database',
+      icon: <BiData className="text-4xl text-purple-400" />,
       skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Express.js', level: 85 },
-        { name: 'Python', level: 80 },
-        { name: 'Django', level: 75 },
-        { name: 'REST APIs', level: 90 },
-        { name: 'GraphQL', level: 70 },
-        { name: 'Microservices', level: 75 }
+        { name: 'Node.js', level: 88, icon: <FaNodeJs className="text-green-600" /> },
+        { name: 'Python', level: 90, icon: <FaPython className="text-blue-500" /> },
+        { name: 'PostgreSQL', level: 85, icon: <SiPostgresql className="text-blue-600" /> },
+        { name: 'MongoDB', level: 82, icon: <SiMongodb className="text-green-500" /> },
+        { name: 'GraphQL', level: 78, icon: <SiGraphql className="text-pink-500" /> },
       ]
     },
     {
-      title: 'Database & Cloud',
-      icon: '🗄️',
+      title: 'Cloud & DevOps',
+      icon: <FaAws className="text-4xl text-orange-400" />,
       skills: [
-        { name: 'MongoDB', level: 85 },
-        { name: 'PostgreSQL', level: 80 },
-        { name: 'MySQL', level: 75 },
-        { name: 'Redis', level: 70 },
-        { name: 'AWS', level: 75 },
-        { name: 'Docker', level: 80 },
-        { name: 'Firebase', level: 85 }
+        { name: 'AWS', level: 70, icon: <FaAws className="text-orange-400" /> },
+        { name: 'Docker', level: 72, icon: <FaDocker className="text-blue-500" /> },
+        { name: 'Kubernetes', level: 65, icon: <FaDatabase className="text-blue-400" /> },
+        { name: 'CI/CD', level: 70, icon: <FaGitAlt className="text-orange-500" /> },
+        { name: 'Vercel/Netlify', level: 85, icon: <SiNextdotjs className="text-white" /> },
       ]
     },
     {
-      title: 'Tools & Others',
-      icon: '🛠️',
+      title: 'Design & UX',
+      icon: <MdDesignServices className="text-4xl text-green-400" />,
       skills: [
-        { name: 'Git/GitHub', level: 95 },
-        { name: 'VS Code', level: 95 },
-        { name: 'Figma', level: 80 },
-        { name: 'Jest/Testing', level: 75 },
-        { name: 'Webpack', level: 70 },
-        { name: 'Linux', level: 80 },
-        { name: 'Agile/Scrum', level: 85 }
+        { name: 'Figma', level: 75, icon: <FaFigma className="text-purple-500" /> },
+        { name: 'UI/UX Design', level: 70, icon: <MdDesignServices className="text-green-400" /> },
+        { name: 'Responsive Design', level: 88, icon: <FaCss3Alt className="text-blue-500" /> },
+        { name: 'Accessibility', level: 78, icon: <FaHtml5 className="text-orange-500" /> },
+        { name: 'Design Systems', level: 80, icon: <MdDesignServices className="text-green-400" /> },
       ]
     }
   ];
 
-  const SkillBar = ({ skill }) => (
-    <div className="mb-4">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-white font-medium">{skill.name}</span>
-        <span className="text-primary text-sm">{skill.level}%</span>
+  const SkillCard = ({ category, index }) => (
+    <div 
+      className={`bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all duration-500 transform ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+      }`}
+      style={{ 
+        transitionDelay: `${index * 150}ms`,
+        animation: isVisible ? `slideInUp 0.6s ease-out ${index * 150}ms both` : 'none'
+      }}
+    >
+      <div className="flex items-center mb-6">
+        {category.icon}
+        <h3 className="text-xl font-bold text-white ml-3">{category.title}</h3>
       </div>
-      <div className="w-full bg-white/10 rounded-full h-2">
-        <div 
-          className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${skill.level}%` }}
-        ></div>
+      
+      <div className="space-y-4">
+        {category.skills.map((skill, skillIndex) => (
+          <div key={skillIndex} className="skill-item">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center">
+                <span className="mr-3">{skill.icon}</span>
+                <span className="text-white font-medium">{skill.name}</span>
+              </div>
+              <span className="text-primary text-sm font-semibold">{skill.level}%</span>
+            </div>
+            <div className="w-full bg-gray-700/50 rounded-full h-2">
+              <div 
+                className={`bg-gradient-to-r from-primary to-blue-400 h-2 rounded-full transition-all duration-1000 ease-out ${
+                  isVisible ? 'animate-pulse' : ''
+                }`}
+                style={{ 
+                  width: isVisible ? `${skill.level}%` : '0%',
+                  transitionDelay: `${(index * 150) + (skillIndex * 100)}ms`
+                }}
+              ></div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 
   return (
-    <div>
-      <Section 
-        title="Skills & Technologies"
-        subtitle="A comprehensive overview of my technical skills and expertise"
+    <div className="min-h-screen bg-background">
+      <div 
+        ref={sectionRef}
+        className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-20"
       >
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Skills & <span className="text-primary">Technologies</span>
+          </h1>
+          <p className="text-white/70 text-lg max-w-3xl mx-auto">
+            A comprehensive overview of my technical skills and expertise across different domains
+          </p>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="grid lg:grid-cols-2 xl:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="h-full">
-              <div className="flex items-center mb-6">
-                <span className="text-3xl mr-3">{category.icon}</span>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
-              </div>
-              <div>
-                {category.skills.map((skill, skillIndex) => (
-                  <SkillBar key={skillIndex} skill={skill} />
-                ))}
-              </div>
-            </Card>
+            <SkillCard key={index} category={category} index={index} />
           ))}
         </div>
 
-        {/* Additional Information */}
-        <div className="mt-16">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <div className="text-4xl mb-4">🎓</div>
-              <h3 className="text-xl font-bold text-white mb-3">Learning</h3>
-              <p className="text-white/80">
-                Always eager to learn new technologies and stay updated with industry trends.
-              </p>
-            </Card>
-            
-            <Card className="text-center">
-              <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-xl font-bold text-white mb-3">Collaboration</h3>
-              <p className="text-white/80">
-                Experience working in agile teams and contributing to open source projects.
-              </p>
-            </Card>
-            
-            <Card className="text-center">
-              <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
-              <p className="text-white/80">
-                Passionate about exploring new technologies and implementing creative solutions.
-              </p>
-            </Card>
+        {/* Bottom Section */}
+        <div className={`mt-16 text-center transform transition-all duration-700 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`} style={{ transitionDelay: '800ms' }}>
+          <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 rounded-2xl p-8 border border-primary/20">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Always Learning & Growing
+            </h3>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              Technology evolves rapidly, and I'm committed to continuous learning. 
+              Currently exploring new frameworks, best practices, and emerging technologies 
+              to stay at the forefront of web development.
+            </p>
           </div>
         </div>
-      </Section>
+      </div>
+
+      {/* Custom Styles */}
+      <style jsx>{`
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .skill-item:hover .bg-gradient-to-r {
+          animation: progress-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes progress-glow {
+          0%, 100% { box-shadow: 0 0 5px rgba(80, 168, 196, 0.5); }
+          50% { box-shadow: 0 0 20px rgba(80, 168, 196, 0.8); }
+        }
+      `}</style>
     </div>
   );
 };
