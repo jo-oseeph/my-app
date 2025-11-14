@@ -6,6 +6,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
+import ServicesSection from './pages/Services';   
 import './App.css';
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
         {/* Home Section */}
         <section id="home">
           <Home />
+        </section>
+        {/* Services Section */}
+        <section id="services">
+          <ServicesSection />
         </section>
         
         {/* About Section */}
