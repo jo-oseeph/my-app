@@ -1,25 +1,81 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaCode, FaUsers, FaLightbulb, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 const About = () => {
-  const milestones = [
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-slide-in-left {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+      
+      .animate-slide-in-right {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
+
+  const experiences = [
     {
-      year: '2024',
-      title: 'AI Innovation Leader',
-      description: 'Leading AI projects and mentoring developers in machine learning applications',
-      icon: <FaLightbulb />
+      title: 'Information Sciences Student',
+      organization: 'Moi University',
+      period: '2021 - 2025',
+      description: 'Pursued Information Sciences with focus on web development fundamentals and programming concepts. Built strong foundation in computer science principles.',
+      icon: <FaGraduationCap className="text-2xl" />
     },
     {
-      year: '2023',
-      title: 'CSA Africa Program',
-      description: 'Selected for prestigious tech mentorship program, building community impact',
-      icon: <FaUsers />
+      title: 'Web Developer',
+      organization: 'Self-Learning & Practice',
+      period: '2023 - Present',
+      description: 'Building web applications using React and modern technologies. Continuously learning through online platforms, focusing on web development technologies and best practices.',
+      icon: <FaCode className="text-2xl" />
     },
     {
-      year: '2022',
-      title: 'Full Stack Mastery',
-      description: 'Achieved expertise in modern web technologies and scalable application development',
-      icon: <FaCode />
+      title: 'Personal Projects',
+      organization: 'Independent Work',
+      period: '2024 - Present',
+      description: 'Developing portfolio of web applications demonstrating practical skills. Completed multiple projects showcasing frontend and backend development capabilities.',
+      icon: <FaBriefcase className="text-2xl" />
     }
   ];
 
@@ -58,52 +114,89 @@ const About = () => {
 
       {/* My Story Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">My Story</h2>
-              <div className="space-y-4 text-white/80 leading-relaxed">
-                <p>
-                  My journey into technology began with curiosity and a desire to solve problems
-                  that matter. Growing up, I was fascinated by how technology could bridge gaps
-                  and create opportunities for people from all walks of life.
-                </p>
-                <p>
-                  Today, I'm a Full-Stack Developer specializing in modern web technologies and
-                  artificial intelligence applications. I believe in the power of mentorship and
-                  community building, having been both a mentee and mentor in various tech
-                  programs.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me contributing to open-source projects, writing
-                  about tech trends, or helping fellow developers navigate their career journeys. I'm
-                  driven by the belief that technology should be accessible, inclusive, and beneficial
-                  for everyone.
-                </p>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Image */}
+            <div className="relative group animate-slide-in-left">
+              <div className="aspect-square w-full lg:max-w-lg mx-auto relative overflow-hidden rounded-2xl border-2 border-primary/30 shadow-2xl shadow-primary/20">
+                <img 
+                  src="images/abt.jpeg" 
+                  alt="Professional headshot"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
               </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-500/10 rounded-full blur-3xl"></div>
             </div>
 
-            {/* Right - Journey Milestones Cards */}
-            <div className="space-y-6">
-              <div className="flex items-center mb-6">
-                <FaGraduationCap className="text-2xl text-primary mr-3" />
-                <h3 className="text-2xl font-bold text-primary">Journey Milestones</h3>
+            {/* Right - Story Content */}
+            <div className="animate-slide-in-right">
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">My Story</h2>
+              <div className="space-y-5 text-white/80 leading-relaxed">
+                <p className="text-lg lg:text-xl">
+                  Full-Stack Developer and AI specialist with a proven track record of delivering 
+                  scalable web applications and intelligent solutions that drive business growth.
+                </p>
+                <p className="text-base lg:text-lg">
+                  I transform complex technical challenges into elegant, user-centric products. 
+                  With expertise spanning modern JavaScript frameworks, cloud architecture, and 
+                  machine learning integration, I build systems that are both powerful and intuitive.
+                </p>
+                <p className="text-base lg:text-lg">
+                  As a CSA Africa Program alumnus and active tech community mentor, I combine 
+                  technical excellence with leadership and collaboration. I'm passionate about 
+                  leveraging technology to create meaningful impact and help teams achieve their goals.
+                </p>
+                <div className="pt-6 flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary font-medium">
+                    React & Node.js
+                  </span>
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary font-medium">
+                    AI/ML Integration
+                  </span>
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary font-medium">
+                    Cloud Architecture
+                  </span>
+                </div>
               </div>
-              
-              {milestones.map((milestone, index) => (
+            </div>
+          </div>
+
+          {/* Experience & Education Section */}
+          <div className="mt-32">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Experience & Education</h3>
+              <p className="text-white/60 text-lg">My academic journey and development experience</p>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              {experiences.map((exp, index) => (
                 <div 
                   key={index}
-                  className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:transform hover:scale-[1.02]"
+                  className="animate-fade-in-up flex-1 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 md:p-8 hover:border-primary/40 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 group"
+                  style={{ animationDelay: `${0.2 + index * 0.15}s` }}
                 >
-                  <div className="flex items-center gap-4 mb-3">
-                  
-                    <span className="bg-green-500 text-black px-3 py-1 rounded-full text-xs font-bold">
-                      {milestone.year}
-                    </span>
+                  <div className="flex flex-col h-full">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110 mb-6">
+                      {exp.icon}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-grow">
+                      <div className="mb-4">
+                        <h4 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-3">
+                          {exp.title}
+                        </h4>
+                        <span className="inline-block text-primary text-sm md:text-base font-semibold bg-primary/10 px-4 py-2 rounded-full mb-3">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <p className="text-white/80 font-medium mb-4 text-base md:text-lg">{exp.organization}</p>
+                      <p className="text-white/60 leading-relaxed">{exp.description}</p>
+                    </div>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">{milestone.title}</h4>
-                  <p className="text-white/70 text-sm">{milestone.description}</p>
                 </div>
               ))}
             </div>
