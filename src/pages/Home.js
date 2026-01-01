@@ -98,7 +98,7 @@ const Home = () => {
               </div>
               
               {/* Description */}
-              <p className="animate-on-scroll text-gray-300 text-xl md:text-2xl lg:text-2xl xl:text-3xl max-w-3xl leading-relaxed">
+              <p className="animate-on-scroll text-gray-300 text-lg md:text-xl lg:text-1xl xl:text-2xl max-w-3xl leading-relaxed">
                 Passionate about crafting innovative solutions that bridge technology and 
                 human needs. I build scalable web applications, explore AI frontiers, and 
                 mentor the next generation of developers.
@@ -130,15 +130,31 @@ const Home = () => {
 </div>
 
               {/* Social Links */}
-              <div className="animate-on-scroll flex gap-4 lg:gap-5 pt-2">
-                <button className="group w-16 h-16 lg:w-16 lg:h-16 border-2 border-gray-600 hover:border-white text-gray-400 hover:text-white rounded-xl hover:rounded-2xl font-medium transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-white/20 flex items-center justify-center">
-                  <FaGithub className="text-2xl lg:text-3xl group-hover:rotate-12 transition-transform" />
-                </button>
-                
-                <button className="group w-16 h-16 lg:w-16 lg:h-16 border-2 border-blue-600 hover:border-blue-400 text-blue-400 hover:bg-blue-500/10 rounded-xl hover:rounded-2xl font-medium transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-blue-400/30 flex items-center justify-center">
-                  <FaLinkedinIn className="text-2xl lg:text-3xl group-hover:rotate-12 transition-transform" />
-                </button>
-              </div>
+           <div className="flex items-center gap-4">
+
+  {/* GitHub */}
+  <a
+    href="https://github.com/jo-oseeph"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    className="group text-gray-400 hover:text-white transition-all duration-300 hover:scale-110"
+  >
+    <FaGithub className="text-xl group-hover:rotate-6 transition-transform" />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/joseph-situma-2876ab391/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="group text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
+  >
+    <FaLinkedinIn className="text-xl group-hover:rotate-6 transition-transform" />
+  </a>
+
+</div>
             </div>
           </div>
         </div>

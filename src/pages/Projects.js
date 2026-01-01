@@ -31,7 +31,7 @@ const Projects = () => {
       id: 1,
       title: 'Composite Connect',
       description: 'Green Kenya Hub - A platform promoting environmental sustainability and connecting eco-conscious communities in Kenya.',
-      image: '/images/img1.jpeg',
+      image: '/images/img11.png',
       category: 'Web Development',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
       github: 'https://github.com/yourusername/composite-connect',
