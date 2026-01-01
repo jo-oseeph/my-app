@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
+
 const Home = () => {
   const sectionRef = useRef(null);
 
@@ -104,17 +105,29 @@ const Home = () => {
               </p>
               
               {/* Action Buttons */}
-              <div className="animate-on-scroll flex flex-wrap gap-4 lg:gap-6 pt-4">
-                <button className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 lg:px-10 lg:py-5 rounded-2xl font-medium text-base lg:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 flex items-center space-x-3">
-                  <FaEnvelope className="text-xl group-hover:rotate-12 transition-transform" />
-                  <span>Hire Me</span>
-                </button>
-                
-                <button className="group border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 backdrop-blur-sm px-8 py-4 lg:px-10 lg:py-5 rounded-2xl font-medium text-base lg:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30 flex items-center space-x-3">
-                  <FaFileAlt className="text-xl group-hover:scale-110 transition-transform" />
-                  <span>View Resume</span>
-                </button>
-              </div>
+             <div className="animate-on-scroll flex flex-wrap gap-4 lg:gap-6 pt-4">
+
+  {/* Hire Me → Contact section */}
+  <a
+    href="#contact"
+    className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 lg:px-10 lg:py-5 rounded-2xl font-medium text-base lg:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 flex items-center space-x-3"
+  >
+    <FaEnvelope className="text-xl group-hover:rotate-12 transition-transform" />
+    <span>Hire Me</span>
+  </a>
+
+  {/* View Resume → PDF */}
+  <a
+    href="/resume/Joseph-Situma-Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 backdrop-blur-sm px-8 py-4 lg:px-10 lg:py-5 rounded-2xl font-medium text-base lg:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30 flex items-center space-x-3"
+  >
+    <FaFileAlt className="text-xl group-hover:scale-110 transition-transform" />
+    <span>View Resume</span>
+  </a>
+
+</div>
 
               {/* Social Links */}
               <div className="animate-on-scroll flex gap-4 lg:gap-5 pt-2">
