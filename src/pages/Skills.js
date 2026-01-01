@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { 
-  FaReact, FaNodeJs, FaPython, FaJs, FaHtml5, FaCss3Alt, 
-  FaVuejs, FaDocker, FaAws, FaGitAlt, FaFigma, FaDatabase 
+  FaReact, FaNodeJs, FaJs, FaCss3Alt, 
+  FaAws, FaGitAlt, FaFigma, 
 } from 'react-icons/fa';
 import { 
-  SiTypescript, SiTailwindcss, SiNextdotjs, SiExpress, 
-  SiMongodb, SiPostgresql, SiGraphql, SiFirebase 
+  SiTypescript, SiTailwindcss, SiNextdotjs, 
+  SiMongodb, SiPostgresql,
 } from 'react-icons/si';
 import { BiData } from 'react-icons/bi';
 import { MdDesignServices } from 'react-icons/md';
@@ -43,7 +43,6 @@ const Skills = () => {
         { name: 'React/Next.js', level: 95, icon: <FaReact className="text-blue-400" /> },
         { name: 'TypeScript', level: 90, icon: <SiTypescript className="text-blue-600" /> },
         { name: 'Tailwind CSS', level: 92, icon: <SiTailwindcss className="text-teal-400" /> },
-        { name: 'Vue.js', level: 85, icon: <FaVuejs className="text-green-500" /> },
         { name: 'JavaScript ES6+', level: 93, icon: <FaJs className="text-yellow-400" /> },
       ]
     },
@@ -52,10 +51,8 @@ const Skills = () => {
       icon: <BiData className="text-4xl text-purple-400" />,
       skills: [
         { name: 'Node.js', level: 88, icon: <FaNodeJs className="text-green-600" /> },
-        { name: 'Python', level: 90, icon: <FaPython className="text-blue-500" /> },
         { name: 'PostgreSQL', level: 85, icon: <SiPostgresql className="text-blue-600" /> },
         { name: 'MongoDB', level: 82, icon: <SiMongodb className="text-green-500" /> },
-        { name: 'GraphQL', level: 78, icon: <SiGraphql className="text-pink-500" /> },
       ]
     },
     {
@@ -63,8 +60,6 @@ const Skills = () => {
       icon: <FaAws className="text-4xl text-orange-400" />,
       skills: [
         { name: 'AWS', level: 70, icon: <FaAws className="text-orange-400" /> },
-        { name: 'Docker', level: 72, icon: <FaDocker className="text-blue-500" /> },
-        { name: 'Kubernetes', level: 65, icon: <FaDatabase className="text-blue-400" /> },
         { name: 'CI/CD', level: 70, icon: <FaGitAlt className="text-orange-500" /> },
         { name: 'Vercel/Netlify', level: 85, icon: <SiNextdotjs className="text-white" /> },
       ]
@@ -76,8 +71,6 @@ const Skills = () => {
         { name: 'Figma', level: 75, icon: <FaFigma className="text-purple-500" /> },
         { name: 'UI/UX Design', level: 70, icon: <MdDesignServices className="text-green-400" /> },
         { name: 'Responsive Design', level: 88, icon: <FaCss3Alt className="text-blue-500" /> },
-        { name: 'Accessibility', level: 78, icon: <FaHtml5 className="text-orange-500" /> },
-        { name: 'Design Systems', level: 80, icon: <MdDesignServices className="text-green-400" /> },
       ]
     }
   ];
