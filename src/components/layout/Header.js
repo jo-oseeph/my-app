@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Projects', id: 'projects' },
     { name: 'Skills', id: 'skills' },
     { name: 'Contact', id: 'contact' }
-  ];
+  ], []);
 
   // Smooth scroll function
   const scrollToSection = (sectionId) => {
@@ -42,7 +42,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [ navItems ]);
 
   const isActive = (sectionId) => activeSection === sectionId;
 
