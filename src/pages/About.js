@@ -61,21 +61,21 @@ const About = () => {
       organization: 'Moi University',
       period: '2021 - 2025',
       description: 'Pursued Information Sciences with focus on web development fundamentals and programming concepts. Built strong foundation in computer science principles.',
-      icon: <FaGraduationCap className="text-3xl" />
+      icon: <FaGraduationCap className="text-2xl md:text-3xl" />
     },
     {
       title: 'Web Developer',
       organization: 'Self-Learning & Practice',
       period: '2023 - Present',
       description: 'Building web applications using React and modern technologies. Continuously learning through online platforms, focusing on web development technologies and best practices.',
-      icon: <FaCode className="text-3xl" />
+      icon: <FaCode className="text-2xl md:text-3xl" />
     },
     {
       title: 'Personal Projects',
       organization: 'Independent Work',
       period: '2024 - Present',
       description: 'Developing portfolio of web applications demonstrating practical skills. Completed multiple projects showcasing frontend and backend development capabilities.',
-      icon: <FaBriefcase className="text-3xl" />
+      icon: <FaBriefcase className="text-2xl md:text-3xl" />
     }
   ];
 
@@ -83,29 +83,29 @@ const About = () => {
     {
       title: 'Innovation',
       description: 'Constantly exploring new technologies and creative solutions to solve complex problems.',
-      icon: <FaLightbulb className="text-4xl text-primary" />
+      icon: <FaLightbulb className="text-3xl text-primary" />
     },
     {
       title: 'Collaboration',
       description: 'Building strong relationships and working together to achieve extraordinary results.',
-      icon: <FaUsers className="text-4xl text-primary" />
+      icon: <FaUsers className="text-3xl text-primary" />
     },
     {
       title: 'Excellence',
       description: 'Committed to delivering high-quality work and continuous improvement in everything I do.',
-      icon: <FaBriefcase className="text-4xl text-primary" />
+      icon: <FaBriefcase className="text-3xl text-primary" />
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-20 px-6 md:px-12 lg:px-20 xl:px-24">
+        <div className="max-w-7xl mx-auto text-left md:text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
             About Me
           </h1>
-          <p className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-4xl md:mx-auto leading-relaxed">
             A passionate technologist on a mission to create meaningful impact through code,
             artificial intelligence, and community building.
           </p>
@@ -113,12 +113,33 @@ const About = () => {
       </section>
 
       {/* My Story Section */}
-      <section className="py-20 px-6 md:px-12">
+      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Image */}
-            <div className="relative group animate-slide-in-left">
-              <div className="aspect-square w-full mx-auto relative overflow-hidden rounded-2xl border-2 border-primary/30 shadow-2xl shadow-primary/20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Left - Story Content */}
+            <div className="animate-slide-in-left order-2 lg:order-1">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 text-left">My Story</h2>
+              <div className="space-y-4 text-white/80 leading-relaxed text-left">
+                <p className="text-base md:text-lg">
+                  Full-Stack Developer and AI specialist with a proven track record of delivering 
+                  scalable web applications and intelligent solutions that drive business growth.
+                </p>
+                <p className="text-sm md:text-base">
+                  I transform complex technical challenges into elegant, user-centric products. 
+                  With expertise spanning modern JavaScript frameworks, cloud architecture, and 
+                  machine learning integration, I build systems that are both powerful and intuitive.
+                </p>
+                <p className="text-sm md:text-base">
+                  As a CSA Africa Program alumnus and active tech community mentor, I combine 
+                  technical excellence with leadership and collaboration. I'm passionate about 
+                  leveraging technology to create meaningful impact and help teams achieve their goals.
+                </p> 
+              </div>
+            </div>
+
+            {/* Right - Image */}
+            <div className="relative group animate-slide-in-right order-1 lg:order-2 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-sm lg:max-w-md h-[400px] md:h-[450px] lg:h-[450px] overflow-hidden rounded-2xl border-2 border-primary/30 shadow-2xl shadow-primary/20">
                 <img 
                   src="images/abt.jpeg" 
                   alt="Professional headshot"
@@ -126,75 +147,43 @@ const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-500/10 rounded-full blur-3xl"></div>
-            </div>
-
-            {/* Right - Story Content */}
-            <div className="animate-slide-in-right">
-              <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8">My Story</h2>
-              <div className="space-y-6 text-white/80 leading-relaxed">
-                <p className="text-xl lg:text-2xl">
-                  Full-Stack Developer and AI specialist with a proven track record of delivering 
-                  scalable web applications and intelligent solutions that drive business growth.
-                </p>
-                <p className="text-lg lg:text-xl">
-                  I transform complex technical challenges into elegant, user-centric products. 
-                  With expertise spanning modern JavaScript frameworks, cloud architecture, and 
-                  machine learning integration, I build systems that are both powerful and intuitive.
-                </p>
-                <p className="text-lg lg:text-xl">
-                  As a CSA Africa Program alumnus and active tech community mentor, I combine 
-                  technical excellence with leadership and collaboration. I'm passionate about 
-                  leveraging technology to create meaningful impact and help teams achieve their goals.
-                </p>
-                <div className="pt-6 flex flex-wrap gap-4">
-                  <span className="px-5 py-2.5 bg-primary/10 border border-primary/30 rounded-full text-base text-primary font-medium">
-                    React & Node.js
-                  </span>
-                  <span className="px-5 py-2.5 bg-primary/10 border border-primary/30 rounded-full text-base text-primary font-medium">
-                    AI/ML Integration
-                  </span>
-                  <span className="px-5 py-2.5 bg-primary/10 border border-primary/30 rounded-full text-base text-primary font-medium">
-                    Cloud Architecture
-                  </span>
-                </div>
-              </div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-green-500/10 rounded-full blur-3xl"></div>
             </div>
           </div>
 
           {/* Experience & Education Section */}
-          <div className="mt-32">
-            <div className="text-center mb-20 animate-fade-in-up">
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Experience & Education</h3>
-              <p className="text-white/60 text-xl">My academic journey and development experience</p>
+          <div className="mt-24 md:mt-32">
+            <div className="text-left md:text-center mb-16 md:mb-20 animate-fade-in-up">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Experience & Education</h3>
+              <p className="text-white/60 text-base md:text-lg">My academic journey and development experience</p>
             </div>
             
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
               {experiences.map((exp, index) => (
                 <div 
                   key={index}
-                  className="animate-fade-in-up flex-1 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 group"
+                  className="animate-fade-in-up flex-1 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 md:p-8 hover:border-primary/40 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 group"
                   style={{ animationDelay: `${0.2 + index * 0.15}s` }}
                 >
                   <div className="flex flex-col h-full">
                     {/* Icon */}
-                    <div className="flex-shrink-0 w-16 h-16 md:w-18 md:h-18 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110 mb-6">
+                    <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary/20 transition-all duration-300 mb-5">
                       {exp.icon}
                     </div>
                     
                     {/* Content */}
                     <div className="flex-grow">
-                      <div className="mb-5">
-                        <h4 className="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-4">
+                      <div className="mb-4">
+                        <h4 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-3">
                           {exp.title}
                         </h4>
-                        <span className="inline-block text-primary text-base md:text-lg font-semibold bg-primary/10 px-5 py-2.5 rounded-full mb-4">
+                        <span className="inline-block text-primary text-xs md:text-sm font-semibold bg-primary/10 px-4 py-2 rounded-full mb-3">
                           {exp.period}
                         </span>
                       </div>
-                      <p className="text-white/80 font-medium mb-5 text-lg md:text-xl">{exp.organization}</p>
-                      <p className="text-white/60 leading-relaxed text-base md:text-lg">{exp.description}</p>
+                      <p className="text-white/80 font-medium mb-3 text-sm md:text-base">{exp.organization}</p>
+                      <p className="text-white/60 leading-relaxed text-sm">{exp.description}</p>
                     </div>
                   </div>
                 </div>
@@ -205,21 +194,21 @@ const About = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 px-6 md:px-12">
+      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-16 text-center">Core Values</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-12 md:mb-16 text-left md:text-center">Core Values</h2>
           
-          <div className="flex flex-col lg:flex-row gap-8 items-stretch justify-center">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-center">
             {coreValues.map((value, index) => (
               <div 
                 key={index}
-                className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-10 hover:border-primary/40 transition-all duration-300 hover:transform hover:scale-105 text-center w-full lg:w-1/3"
+                className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 md:p-8 hover:border-primary/40 transition-all duration-300 hover:transform hover:scale-105 text-center w-full lg:w-1/3"
               >
-                <div className="mb-8 flex justify-center">
+                <div className="mb-6 flex justify-center">
                   {value.icon}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">{value.title}</h3>
-                <p className="text-white/70 leading-relaxed text-lg">{value.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-4">{value.title}</h3>
+                <p className="text-white/70 leading-relaxed text-sm md:text-base">{value.description}</p>
               </div>
             ))}
           </div>
