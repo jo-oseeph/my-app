@@ -83,7 +83,7 @@ const Home = () => {
 
                 {/* View Resume → PDF */}
                 <a
-                  href="/resume/Joseph-Situma-Resume.pdf"
+                  href="/resume/Joseph-cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 backdrop-blur-sm px-6 py-2.5 lg:px-7 lg:py-3 rounded-3xl font-medium text-sm lg:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30 flex items-center space-x-2"

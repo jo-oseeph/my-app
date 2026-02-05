@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaCode, FaUsers, FaLightbulb, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaCode, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 const About = () => {
   useEffect(() => {
@@ -79,23 +79,6 @@ const About = () => {
     }
   ];
 
-  const coreValues = [
-    {
-      title: 'Innovation',
-      description: 'Constantly exploring new technologies and creative solutions to solve complex problems.',
-      icon: <FaLightbulb className="text-3xl text-primary" />
-    },
-    {
-      title: 'Collaboration',
-      description: 'Building strong relationships and working together to achieve extraordinary results.',
-      icon: <FaUsers className="text-3xl text-primary" />
-    },
-    {
-      title: 'Excellence',
-      description: 'Committed to delivering high-quality work and continuous improvement in everything I do.',
-      icon: <FaBriefcase className="text-3xl text-primary" />
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -189,28 +172,6 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values Section */}
-      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 xl:px-24">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-12 md:mb-16 text-left md:text-center">Core Values</h2>
-          
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-center">
-            {coreValues.map((value, index) => (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 md:p-8 hover:border-primary/40 transition-all duration-300 hover:transform hover:scale-105 text-center w-full lg:w-1/3"
-              >
-                <div className="mb-6 flex justify-center">
-                  {value.icon}
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm md:text-base">{value.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
