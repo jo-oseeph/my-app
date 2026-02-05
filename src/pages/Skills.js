@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { 
   FaReact, FaNodeJs, FaJs, FaCss3Alt, 
-  FaAws, FaGitAlt, FaFigma, 
+  FaAws, FaGitAlt, FaFigma, FaCloudUploadAlt, 
 } from 'react-icons/fa';
 import { 
   SiTypescript, SiTailwindcss, SiNextdotjs, 
-  SiMongodb, SiPostgresql,
+  SiMongodb, SiPostgresql, SiAdobephotoshop
 } from 'react-icons/si';
 import { BiData } from 'react-icons/bi';
 import { MdDesignServices } from 'react-icons/md';
@@ -61,8 +61,9 @@ const Skills = () => {
       icon: <FaAws className="text-4xl text-orange-400" />,
       skills: [
         { name: 'AWS', level: 70, icon: <FaAws className="text-orange-400" /> },
-        { name: 'CI/CD', level: 70, icon: <FaGitAlt className="text-orange-500" /> },
-        { name: 'Vercel/Netlify', level: 85, icon: <SiNextdotjs className="text-white" /> },
+  { name: 'CI/CD', level: 70, icon: <FaGitAlt className="text-orange-500" /> },
+  { name: 'Vercel/Netlify', level: 85, icon: <SiNextdotjs className="text-white" /> },
+  { name: 'Render', level: 75, icon: <FaCloudUploadAlt className="text-sky-400" /> },
       ]
     },
     {
@@ -70,8 +71,9 @@ const Skills = () => {
       icon: <MdDesignServices className="text-4xl text-green-400" />,
       skills: [
         { name: 'Figma', level: 75, icon: <FaFigma className="text-purple-500" /> },
-        { name: 'UI/UX Design', level: 70, icon: <MdDesignServices className="text-green-400" /> },
-        { name: 'Responsive Design', level: 88, icon: <FaCss3Alt className="text-blue-500" /> },
+  { name: 'Adobe Photoshop', level: 72, icon: <SiAdobephotoshop className="text-blue-600" /> },
+  { name: 'UI/UX Design', level: 70, icon: <MdDesignServices className="text-green-400" /> },
+  { name: 'Responsive Design', level: 88, icon: <FaCss3Alt className="text-blue-500" /> },
       ]
     }
   ];
@@ -139,22 +141,6 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <SkillCard key={index} category={category} index={index} />
           ))}
-        </div>
-
-        {/* Bottom Section */}
-        <div className={`mt-16 text-center transform transition-all duration-700 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`} style={{ transitionDelay: '800ms' }}>
-          <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 rounded-2xl p-8 border border-primary/20">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Always Learning & Growing
-            </h3>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              Technology evolves rapidly, and I'm committed to continuous learning. 
-              Currently exploring new frameworks, best practices, and emerging technologies 
-              to stay at the forefront of web development.
-            </p>
-          </div>
         </div>
       </div>
 

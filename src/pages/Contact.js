@@ -89,12 +89,6 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Text */}
-        <div className="text-center mb-12 animate-fade-in-up">
-          <p className="text-white/60 text-base md:text-lg mb-4">
-            Always learning and exploring new technologies to stay at the forefront of web development.
-          </p>
-        </div>
 
         {/* Get In Touch Section */}
         <div className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>

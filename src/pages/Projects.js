@@ -29,58 +29,40 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Composite Connect',
-      description: 'Platform promoting environmental sustainability and connecting eco-conscious communities.',
+      title: 'Serene Spa',
+      description: 'A modern spa website showcasing massage and wellness services, designed with a clean UI, smooth layout, and responsive experience across devices.',
       image: '/images/img11.png',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      live: 'https://composite-connect-demo.com',
-      github: 'https://github.com/username/composite-connect'
+      technologies: ['React', 'TailwindCss'],
+      live: 'https://serenspa.vercel.app',
+      github: 'https://github.com/jo-oseeph/Spa'
     },
     {
       id: 2,
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with payment integration and admin dashboard.',
-      image: '/images/img2.jpeg',
-      technologies: ['React', 'PostgreSQL', 'Stripe'],
-      live: 'https://ecommerce-demo.com',
-      github: 'https://github.com/username/ecommerce'
+      title: 'Cybersecurity Platform',
+      description: 'A full-stack cybersecurity startup website with secure APIs, JWT authentication, role-based access control, protected routes, and an admin-managed blog system.',
+      image: '/images/cyber.png',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+      live: 'https://cybexv2.vercel.app',
+      github: 'https://github.com/jo-oseeph/Cybexv2'
     },
     {
       id: 3,
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates and team features.',
-      image: '/images/img3.jpeg',
-      technologies: ['React', 'Firebase', 'Material-UI'],
-      live: 'https://taskmanager-demo.com',
-      github: 'https://github.com/username/task-manager'
+      title: 'Motorbike Spare Parts Website',
+      description: 'A responsive motorbike spare parts website built with React, CSS3, and Tailwind, focused on clear product display and usability.',
+      image: '/images/tiger.png',
+      technologies: ['React', 'TailwindCss', 'CSS3'],
+      live: 'https://tigerautoparts.vercel.app',
+      github: 'https://github.com/jo-oseeph/Autoparts-Website'
     },
     {
       id: 4,
-      title: 'Weather Dashboard',
-      description: 'Interactive weather application with visualizations, forecasts, and location services.',
-      image: '/images/project.jpg',
-      technologies: ['React', 'Chart.js', 'OpenWeather API'],
-      live: 'https://weather-demo.com',
-      github: 'https://github.com/username/weather-dashboard'
-    },
-    {
-      id: 5,
-      title: 'Social Media App',
-      description: 'Modern social platform with real-time messaging and content sharing capabilities.',
-      image: '/images/img11.png',
-      technologies: ['React', 'Node.js', 'Socket.io'],
-      live: 'https://social-demo.com',
-      github: 'https://github.com/username/social-app'
-    },
-    {
-      id: 6,
-      title: 'Portfolio CMS',
-      description: 'Content management system for portfolios with drag-and-drop interface builder.',
+      title: 'E-Waste Management Platform',
+      description: 'A digital platform connecting e-waste producers with certified recyclers. Features item listing, location matching, and impact tracking.',
       image: '/images/img2.jpeg',
-      technologies: ['Next.js', 'TypeScript', 'Prisma'],
-      live: 'https://portfolio-cms-demo.com',
-      github: 'https://github.com/username/portfolio-cms'
-    }
+      technologies: ['React', 'TailwindCss', 'Node.js', 'MongoDB', 'Firebase'],
+      live: 'https://waste-frontend-two.vercel.app',
+      github: 'https://github.com/jo-oseeph/waste-frontend'
+    }  
   ];
 
   return (

@@ -26,15 +26,17 @@ function App() {
           <ServicesSection />
         </section>
         
+         <section id="projects">
+          <Projects />
+        </section>
+        
         {/* About Section */}
         <section id="about">
           <About />
         </section>
         
         {/* Projects Section */}
-        <section id="projects">
-          <Projects />
-        </section>
+       
         
         {/* Skills Section */}
         <section id="skills">
