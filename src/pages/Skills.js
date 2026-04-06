@@ -5,7 +5,6 @@ import {
   FaJs,
   FaAws,
   FaGitAlt,
-  FaCloudUploadAlt,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -62,13 +61,10 @@ const categories = [
         icon: <FaGitAlt size={15} className="text-orange-500" />,
       },
       {
-        name: "Vercel / Netlify",
+        name: "Vercel / Render",
         icon: <SiNextdotjs size={15} className="text-white" />,
       },
-      {
-        name: "Render",
-        icon: <FaCloudUploadAlt size={15} className="text-sky-400" />,
-      },
+     
     ],
   },
 ];
