@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FaExternalLinkAlt,
   FaGithub,
   FaSpa,
   FaShieldAlt,
@@ -132,20 +131,6 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-12 border border-[#1e1e1e] rounded-2xl p-8 text-center">
-          <p className="text-gray-400 text-base mb-5">
-            Have an exciting project in mind? Let's collaborate and bring your
-            vision to life.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-white text-black text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-200 transition-colors duration-200"
-          >
-            Start a conversation <FaExternalLinkAlt size={11} />
-          </a>
         </div>
       </div>
     </section>
