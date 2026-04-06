@@ -8,7 +8,6 @@ import {
   FaCloudUploadAlt,
 } from "react-icons/fa";
 import {
-  SiTypescript,
   SiTailwindcss,
   SiNextdotjs,
   SiMongodb,
@@ -24,10 +23,6 @@ const categories = [
       {
         name: "React / Next.js",
         icon: <FaReact size={15} className="text-cyan-400" />,
-      },
-      {
-        name: "TypeScript",
-        icon: <SiTypescript size={15} className="text-blue-500" />,
       },
       {
         name: "Tailwind CSS",
