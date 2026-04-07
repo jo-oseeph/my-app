@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt, FaArrowDown } from 'react-icons/fa';
 
-const roles = ['FullStack Developer', 'React Specialist', 'Node.js Engineer', 'UI/UX Enthusiast'];
+const roles = ['FullStack Developer', 'React Specialist', 'Node.js Engineer', 'Graphic Designer'];
 
 const Home = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -48,7 +48,7 @@ const Home = () => {
 
               {/* Name + Typewriter */}
               <div className="flex flex-col gap-2">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold-600 text-white leading-tight tracking-tight">
                   Hi, I'm <span className="text-cyan-400">Joseph</span>
                 </h1>
                 <div className="flex items-center gap-2 h-10">
@@ -121,22 +121,16 @@ const Home = () => {
                 {/* Image frame */}
                 <div className="relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border border-cyan-400/20 shadow-2xl shadow-cyan-500/10">
                   <img
-                    src="/images/profile.jpg"
+                    src="/images/pr.jpg"
                     alt="Joseph Situma"
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/30 to-transparent"></div>
                 </div>
-
-                {/* Floating badge — top right */}
-                <div className="absolute -top-2 -right-2 bg-[#111] border border-cyan-400/20 rounded-2xl px-4 py-2.5 shadow-xl">
-                  <p className="text-white text-xs font-semibold">2+ yrs exp</p>
-                </div>
-
                 {/* Floating badge — bottom left */}
                 <div className="absolute -bottom-2 -left-2 bg-[#111] border border-cyan-400/20 rounded-2xl px-4 py-2.5 shadow-xl">
-                  <p className="text-cyan-400 text-xs font-semibold">Open to work ✦</p>
+                  <p className="text-cyan-400 text-xs font-semibold">Open to work</p>
                 </div>
               </div>
             </div>
