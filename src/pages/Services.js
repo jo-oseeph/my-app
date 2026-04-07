@@ -15,12 +15,12 @@ const services = [
     title: 'Custom Website Development',
     description: 'Building tailor-made websites from scratch that perfectly align with your business goals and brand identity, ensuring optimal performance and user experience.',
   },
-  {
-    icon: <FaPalette size={20} className="text-cyan-400" />,
-    category: 'Design',
-    title: 'Frontend UI Design & Implementation',
-    description: 'Creating stunning, intuitive user interfaces with modern design principles and implementing them with pixel-perfect precision using the latest frontend technologies.',
-  },
+ {
+  icon: <FaPalette size={20} className="text-cyan-400" />,
+  category: 'Development',
+  title: 'Mobile App Development',
+  description: 'Building high-performance, scalable mobile applications with seamless user experiences, leveraging modern frameworks to deliver responsive, secure, and feature-rich apps across Android and iOS platforms.',
+},
   {
     icon: <FaServer size={20} className="text-cyan-400" />,
     category: 'Backend',
