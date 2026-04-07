@@ -3,38 +3,34 @@ import React, { useState, useEffect, useMemo } from 'react';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
 
   const navItems = useMemo(() => [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Projects', id: 'projects' },
     { name: 'Skills', id: 'skills' },
-    { name: 'Contact', id: 'contact' }
+    { name: 'Services', id: 'services' },
+    { name: 'Contact', id: 'contact' },
   ], []);
 
-  // Smooth scroll function
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for fixed header height
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: element.offsetTop - 72, behavior: 'smooth' });
     }
-    setIsMenuOpen(false); // Close mobile menu after clicking
+    setIsMenuOpen(false);
   };
 
-  // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 100;
+      setScrolled(window.scrollY > 20);
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
+      const scrollPosition = window.scrollY + 100;
+      for (let i = navItems.length - 1; i >= 0; i--) {
+        const section = document.getElementById(navItems[i].id);
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
+          setActiveSection(navItems[i].id);
           break;
         }
       }
@@ -42,92 +38,78 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [ navItems ]);
-
-  const isActive = (sectionId) => activeSection === sectionId;
+  }, [navItems]);
 
   return (
-    <header 
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#1a1a1a]'
+          : 'bg-transparent'
+      }`}
     >
-      <div className="backdrop-blur-md bg-white/5">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <button 
-              onClick={() => scrollToSection('home')} 
-              className="text-2xl font-bold text-primary hover:text-primary/80 transition-all duration-300 hover:scale-105"
-            >
-              Joseph.
-            </button>
+      <nav className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative py-2 transition-all duration-300 group ${
-                    isActive(item.id)
-                      ? 'text-primary font-medium'
-                      : 'text-white hover:text-primary'
-                  }`}
-                >
-                  {item.name}
-                  {/* Animated bottom border */}
-                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
-                    isActive(item.id) ? 'w-full' : ''
-                  }`}></span>
-                </button>
-              ))}
-            </div>
+        {/* Logo */}
+        <button
+          onClick={() => scrollToSection('home')}
+          className="text-cyan-400 font-bold text-lg tracking-tight hover:text-cyan-400 transition-colors duration-200"
+        >
+          Joseph
+        </button>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white hover:text-primary transition-all duration-300 hover:scale-110"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`relative px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
+                activeSection === item.id
+                  ? 'text-cyan-400 bg-cyan-400/5'
+                  : 'text-gray-400 hover:text-white hover:bg-[#111]'
+              }`}
             >
-              {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
+              {item.name}
+              {activeSection === item.id && (
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-cyan-400" />
               )}
-            </svg>
-          </button>
+            </button>
+          ))}
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 backdrop-blur-sm bg-white/5 rounded-lg border border-primary/20">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left py-3 px-4 transition-all duration-300 relative group ${
-                  isActive(item.id)
-                    ? 'text-primary font-medium bg-primary/10'
-                    : 'text-white hover:text-primary hover:bg-white/5'
-                }`}
-              >
-                {item.name}
-                <span className={`absolute bottom-0 left-4 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-8 ${
-                  isActive(item.id) ? 'w-8' : ''
-                }`}></span>
-              </button>
-            ))}
-          </div>
-        )}
+        {/* Mobile burger */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden w-9 h-9 flex items-center justify-center rounded-xl bg-[#111] border border-[#1f1f1f] text-gray-400 hover:text-white transition-colors duration-200"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            {isMenuOpen
+              ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            }
+          </svg>
+        </button>
       </nav>
-      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden mx-4 mb-4 bg-[#111] border border-[#1f1f1f] rounded-2xl overflow-hidden">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`w-full text-left px-5 py-3.5 text-sm transition-colors duration-200 border-b border-[#1a1a1a] last:border-0 ${
+                activeSection === item.id
+                  ? 'text-cyan-400 bg-cyan-400/5'
+                  : 'text-gray-400 hover:text-white hover:bg-[#161616]'
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+      )}
     </header>
   );
 };
