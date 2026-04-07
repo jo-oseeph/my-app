@@ -1,56 +1,39 @@
 import React from "react";
-import {
-  FaGithub,
-  FaSpa,
-  FaShieldAlt,
-  FaMotorcycle,
-  FaRecycle,
-} from "react-icons/fa";
+import { FaGithub, FaSpa, FaShieldAlt, FaGraduationCap } from "react-icons/fa";
 
 const projects = [
   {
     id: 1,
+    icon: <FaShieldAlt size={20} className="text-cyan-400" />,
+    category: "Technology",
+    title: "CybexTech",
+    description:
+      "Modern company website presenting web, cloud, and maintenance services with a scalable and professional interface.",
+    technologies: ["React", "Node.js", "MongoDB"],
+    live: "https://www.cybextech.co.ke/",
+    github: "https://github.com/jo-oseeph/Cybexv2",
+  },
+  {
+    id: 2,
+    icon: <FaGraduationCap size={20} className="text-cyan-400" />,
+    category: "Education",
+    title: "Moilearn",
+    description:
+      "MERN-based platform for sharing exam papers with JWT auth, role-based access, Cloudinary storage, and AI upload integration.",
+    technologies: ["React", "Node.js", "MongoDB", "Cloudinary", "AI"],
+    live: "https://moilearn.vercel.app",
+    github: "https://github.com/jo-oseeph/moilearn-frontend",
+  },
+  {
+    id: 3,
     icon: <FaSpa size={20} className="text-cyan-400" />,
     category: "Wellness",
     title: "Serene Spa",
     description:
-      "A modern spa website showcasing massage and wellness services, designed with a clean UI, smooth layout, and responsive experience across devices.",
+      "Responsive spa website built with React and Tailwind, focused on clean UI and seamless user experience.",
     technologies: ["React", "TailwindCSS"],
     live: "https://serenspa.vercel.app",
     github: "https://github.com/jo-oseeph/Spa",
-  },
-  {
-    id: 2,
-    icon: <FaShieldAlt size={20} className="text-cyan-400" />,
-    category: "Security",
-    title: "Cybersecurity Platform",
-    description:
-      "A full-stack software development company website with secure APIs, JWT authentication, role-based access control, protected routes, and an admin-managed blog system.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    live: "https://cybexv2.vercel.app",
-    github: "https://github.com/jo-oseeph/Cybexv2",
-  },
-  {
-    id: 3,
-    icon: <FaMotorcycle size={20} className="text-cyan-400" />,
-    category: "E-Commerce",
-    title: "Motorbike Spare Parts",
-    description:
-      "A responsive motorbike spare parts website built with React, CSS3, and Tailwind, focused on clear product display and usability.",
-    technologies: ["React", "TailwindCSS", "CSS3"],
-    live: "https://tigerautoparts.vercel.app",
-    github: "https://github.com/jo-oseeph/Autoparts-Website",
-  },
-  {
-    id: 4,
-    icon: <FaRecycle size={20} className="text-cyan-400" />,
-    category: "Green Tech",
-    title: "E-Waste Management",
-    description:
-      "A digital platform connecting e-waste producers with certified recyclers. Features item listing, location matching, and impact tracking.",
-    technologies: ["React", "TailwindCSS", "Node.js", "MongoDB", "Firebase"],
-    live: "https://waste-frontend-two.vercel.app",
-    github: "https://github.com/jo-oseeph/waste-frontend",
   },
 ];
 

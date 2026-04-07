@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt, FaArrowDown } from 'react-icons/fa';
+import React, { useEffect, useState } from "react";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaFileAlt,
+} from "react-icons/fa";
 
-const roles = ['FullStack Developer', 'React Specialist', 'Node.js Engineer', 'Graphic Designer'];
+const roles = [
+  "FullStack Developer",
+  "React Specialist",
+  "Node.js Engineer",
+  "Graphic Designer",
+];
 
 const Home = () => {
   const [roleIndex, setRoleIndex] = useState(0);
-  const [displayed, setDisplayed] = useState('');
+  const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
@@ -17,7 +27,7 @@ const Home = () => {
       const pause = setTimeout(() => setTyping(false), 2000);
       return () => clearTimeout(pause);
     }
-    if (!typing && displayed === '') {
+    if (!typing && displayed === "") {
       setRoleIndex((prev) => (prev + 1) % roles.length);
       setTyping(true);
       return;
@@ -31,19 +41,18 @@ const Home = () => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col">
-
       {/* Hero */}
       <section className="flex-grow flex items-center px-6 md:px-12 lg:px-20 pt-24 pb-16">
         <div className="max-w-6xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
             {/* Left — Text */}
             <div className="flex flex-col gap-7 order-2 lg:order-1">
-
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-[#111] border border-cyan-400/20 rounded-full px-4 py-2 w-fit">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                <span className="text-gray-400 text-xs uppercase tracking-widest font-medium">Available for opportunities</span>
+                <span className="text-gray-400 text-xs uppercase tracking-widest font-medium">
+                  Available for opportunities
+                </span>
               </div>
 
               {/* Name + Typewriter */}
@@ -61,8 +70,9 @@ const Home = () => {
 
               {/* Description */}
               <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-lg">
-                Passionate about crafting innovative solutions that bridge technology and human needs.
-                I build scalable web applications and mentor the next generation of developers.
+                I build scalable web and mobile applications with a focus on
+                performance, clean architecture, and real-world usability. I
+                turn ideas into reliable digital products
               </p>
 
               {/* CTAs */}
@@ -130,23 +140,15 @@ const Home = () => {
                 </div>
                 {/* Floating badge — bottom left */}
                 <div className="absolute -bottom-2 -left-2 bg-[#111] border border-cyan-400/20 rounded-2xl px-4 py-2.5 shadow-xl">
-                  <p className="text-cyan-400 text-xs font-semibold">Open to work</p>
+                  <p className="text-cyan-400 text-xs font-semibold">
+                    Open to work
+                  </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
-
-      {/* Scroll hint */}
-      <div className="flex justify-center pb-10">
-        <a href="#about" className="flex flex-col items-center gap-1.5 text-gray-600 hover:text-cyan-400 transition-colors duration-200 group">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <FaArrowDown size={12} className="animate-bounce" />
-        </a>
-      </div>
-
     </div>
   );
 };

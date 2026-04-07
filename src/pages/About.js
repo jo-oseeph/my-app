@@ -23,7 +23,7 @@ const experiences = [
   {
     title: 'Web Developer',
     organization: 'Self-Learning & Practice',
-    period: '2023 - Present',
+    period: '2024 - Present',
     description: 'Building web applications using React and modern technologies. Continuously learning through online platforms, focusing on web development technologies and best practices.',
     icon: <FaCode size={20} className="text-cyan-400" />,
   },
