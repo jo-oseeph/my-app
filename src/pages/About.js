@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaBriefcase, FaGraduationCap, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { FaCode, FaBriefcase, FaGraduationCap, } from 'react-icons/fa';
 import { MdWorkHistory } from 'react-icons/md';
 import { BsStack } from 'react-icons/bs';
 import { HiOutlineCloud } from 'react-icons/hi';
@@ -67,24 +67,6 @@ const About = () => {
                   Full-stack with React/Next.js and Node.js (Express); deployment across Vercel, Render, and AWS.
                 </p>
               </div>
-
-              {/* CTAs */}
-              <div className="flex items-center gap-3 pt-2">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors duration-200"
-                >
-                  <FaEnvelope size={13} />
-                  Get in touch
-                </a>
-                <a
-                  href="#projects"
-                  className="inline-flex items-center gap-2 bg-transparent border border-[#2a2a2a] hover:border-[#444] text-gray-300 text-sm font-medium px-5 py-2.5 rounded-full transition-colors duration-200"
-                >
-                  <FaGlobe size={13} />
-                  View portfolio
-                </a>
-              </div>
             </div>
 
             {/* Right - Image */}
@@ -95,10 +77,6 @@ const About = () => {
                   alt="About"
                   className="w-full h-full object-cover"
                 />
-              </div>
-              {/* Code icon badge */}
-              <div className="absolute bottom-6 left-4 lg:-left-6 w-14 h-14 bg-[#111] border border-[#222] rounded-2xl flex items-center justify-center shadow-xl">
-                <FaCode size={22} className="text-cyan-400" />
               </div>
             </div>
           </div>
