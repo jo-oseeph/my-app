@@ -7,10 +7,12 @@ const Header = () => {
 
   const navItems = useMemo(() => [
     { name: 'Home', id: 'home' },
+     { name: 'Services', id: 'services' },
+     { name: 'Projects', id: 'projects' },
     { name: 'About', id: 'about' },
-    { name: 'Projects', id: 'projects' },
+    
     { name: 'Skills', id: 'skills' },
-    { name: 'Services', id: 'services' },
+   
     { name: 'Contact', id: 'contact' },
   ], []);
 
