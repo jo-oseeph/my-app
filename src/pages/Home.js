@@ -8,7 +8,7 @@ import {
 
 const roles = [
   "FullStack Developer",
-  "App Developer",
+  "AI Enthusiast",
   "Graphic Designer",
 ];
 

@@ -9,7 +9,7 @@ const stats = [
   { icon: <MdWorkHistory size={22} className="text-cyan-400" />, value: '2+ years', label: 'Professional experience' },
   { icon: <BsStack size={22} className="text-cyan-400" />, value: 'Full-stack', label: 'Web & backend engineering' },
   { icon: <HiOutlineCloud size={22} className="text-cyan-400" />, label: 'Cloud deployments', value: 'Multi-cloud' },
-  { icon: <RiRobot2Line size={22} className="text-cyan-400" />, value: 'AI integration', label: 'ML-powered applications' },
+  { icon: <RiRobot2Line size={22} className="text-cyan-400" />, value: 'AI integration', label: 'AI-powered applications' },
 ];
 
 const experiences = [
@@ -47,11 +47,6 @@ const About = () => {
 
             {/* Left */}
             <div className="flex flex-col gap-6">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#111] border border-[#222] rounded-full px-4 py-2 w-fit">
-                <span className="w-2 h-2 rounded-full bg-green-400"></span>
-                <span className="text-gray-400 text-xs uppercase tracking-widest font-medium">Available for opportunities</span>
-              </div>
 
               {/* Headline */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
