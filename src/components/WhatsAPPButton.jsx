@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
       {/* Label */}
       <span
         className={`bg-[#111] border border-[#1f1f1f] text-gray-300 text-xs font-medium px-3 py-1.5 rounded-full shadow-lg transition-all duration-300 ${
-          hovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2 pointer-events-none'
+          hovered ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-2 pointer-events-none'
         }`}
       >
         Quick Chat
