@@ -8,8 +8,7 @@ import {
 
 const roles = [
   "FullStack Developer",
-  "React Specialist",
-  "Node.js Engineer",
+  "App Developer",
   "Graphic Designer",
 ];
 
@@ -47,15 +46,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             {/* Left — Text */}
             <div className="flex flex-col gap-7 order-2 lg:order-1">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#111] border border-cyan-400/20 rounded-full px-4 py-2 w-fit">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                <span className="text-gray-400 text-xs uppercase tracking-widest font-medium">
-                  Available for opportunities
-                </span>
-              </div>
-
-              {/* Name + Typewriter */}
+            {/* Name + Typewriter */}
               <div className="flex flex-col gap-2">
                 <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold-600 text-white leading-tight tracking-tight">
                   Hi, I'm <span className="text-cyan-400">Joseph</span>
