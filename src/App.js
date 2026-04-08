@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import ServicesSection from './pages/Services';   
+import WhatsAppButton from './components/WhatsAPPButton';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}
       <Header />
+      <WhatsAppButton />
       
       {/* Main Content - All sections in one page */}
       <main>
