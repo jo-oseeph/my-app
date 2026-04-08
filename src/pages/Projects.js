@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaGithub, FaSpa, FaShieldAlt, FaGraduationCap } from "react-icons/fa";
 
 const projects = [
@@ -37,12 +38,29 @@ const projects = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 const Projects = () => {
   return (
-    <section className="bg-[#0a0a0a] py-20 px-6 md:px-12 lg:px-20">
+    <section className="bg-[#0a0a0a] py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-6xl mx-auto">
+
         {/* Header */}
-        <div className="mb-14 text-center">
+        <motion.div
+          className="mb-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <p className="text-gray-500 text-xs font-medium uppercase tracking-widest mb-3">
             Work
           </p>
@@ -52,18 +70,26 @@ const Projects = () => {
           <p className="text-gray-500 text-sm max-w-md mx-auto">
             Recent builds spanning full-stack delivery and cloud deployment.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
+        >
           {projects.map((project) => (
-            <div
+            <motion.div
               key={project.id}
-              className="bg-[#111] border border-[#1f1f1f] rounded-2xl p-7 flex flex-col gap-6 hover:border-[#2a2a2a] transition-colors duration-300"
+              variants={cardVariants}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="bg-[#111] border border-cyan-400/20 rounded-2xl p-7 flex flex-col gap-5 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-colors duration-300"
             >
-              {/* Icon */}
+              {/* Icon + Badge */}
               <div className="flex items-center justify-between">
-                <div className="w-9 h-9 rounded-lg bg-[#1a1a1a] flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center">
                   {project.icon}
                 </div>
                 <span className="text-xs text-gray-400 border border-[#2a2a2a] rounded-full px-3 py-1">
@@ -112,9 +138,10 @@ const Projects = () => {
                   <FaGithub size={15} />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
