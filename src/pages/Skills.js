@@ -5,12 +5,15 @@ import {
   FaJs,
   FaAws,
   FaGitAlt,
+  FaServer,
+  FaHtml5,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiNextdotjs,
   SiMongodb,
   SiPostgresql,
+  SiSupabase,
 } from "react-icons/si";
 import { BiData } from "react-icons/bi";
 
@@ -31,6 +34,10 @@ const categories = [
         name: "JavaScript ES6+",
         icon: <FaJs size={15} className="text-yellow-400" />,
       },
+      {
+        name: "HTML & CSS",
+        icon: <FaHtml5 size={15} className="text-orange-400" />,
+      },
     ],
   },
   {
@@ -49,6 +56,10 @@ const categories = [
         name: "MongoDB",
         icon: <SiMongodb size={15} className="text-green-400" />,
       },
+      {
+        name: "Supabase",
+        icon: <SiSupabase size={15} className="text-green-400" />,
+      },
     ],
   },
   {
@@ -64,7 +75,10 @@ const categories = [
         name: "Vercel / Render",
         icon: <SiNextdotjs size={15} className="text-white" />,
       },
-     
+      {
+        name: "DNS / Hosting",
+        icon: <FaServer size={15} className="text-orange-500" />,
+      },
     ],
   },
 ];
