@@ -12,7 +12,7 @@ const projects = [
     technologies: ["React", "Node.js", "MongoDB"],
     image: "/images/cyber.png",
     live: "https://www.cybextech.co.ke/",
-    github: "https://github.com/jo-oseeph/Cybexv2",
+    
   },
   {
     id: 4,
@@ -21,7 +21,7 @@ const projects = [
     description:
       "A centralized platform connecting students to rentals, food delivery, and essential campus services.",
     technologies: ["React", "Node.js"],
-    image: "/images/moihub.jpeg",
+    image: "/images/moihub.png",
     live: "https://moihub-silk.vercel.app/",
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     description:
       "MERN-based platform for sharing exam papers with JWT auth, role-based access, Cloudinary storage, and AI upload integration.",
     technologies: ["React", "Node.js", "MongoDB", "Cloudinary", "AI"],
-    image: "/images/moilearn.jpeg",
+    image: "/images/moilearn.png",
     live: "https://moilearn.vercel.app",
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     description:
       "Responsive spa website built with React and Tailwind, focused on clean UI and seamless user experience.",
     technologies: ["React", "TailwindCSS"],
-    image: "/images/spa.jpeg",
+    image: "/images/spa.png",
     live: "https://serenspa.vercel.app",
   },
 ];
