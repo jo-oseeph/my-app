@@ -20,7 +20,7 @@ const projects = [
     category: "Student Services",
     description:
       "A centralized platform connecting students to rentals, food delivery, and essential campus services.",
-    technologies: ["React", "Node.js"],
+    technologies: ["React", "Node.js", "MongoDB", "Cloudinary"],
     image: "/images/moihub.png",
     live: "https://moihub-silk.vercel.app/",
   },
