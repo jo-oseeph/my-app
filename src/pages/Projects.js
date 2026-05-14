@@ -1,40 +1,48 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaSpa, FaShieldAlt, FaGraduationCap } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
     id: 1,
-    icon: <FaShieldAlt size={20} className="text-cyan-400" />,
     category: "Technology",
     title: "CybexTech",
     description:
       "Modern company website presenting web, cloud, and maintenance services with a scalable and professional interface.",
     technologies: ["React", "Node.js", "MongoDB"],
+    image: "/images/cyber.png",
     live: "https://www.cybextech.co.ke/",
     github: "https://github.com/jo-oseeph/Cybexv2",
   },
   {
+    id: 4,
+    title: "MoiHub",
+    category: "Student Services",
+    description:
+      "A centralized platform connecting students to rentals, food delivery, and essential campus services.",
+    technologies: ["React", "Node.js"],
+    image: "/images/moihub.jpeg",
+    live: "https://moihub-silk.vercel.app/",
+  },
+  {
     id: 2,
-    icon: <FaGraduationCap size={20} className="text-cyan-400" />,
     category: "Education",
-    title: "Moilearn",
+    title: "MoiLearn",
     description:
       "MERN-based platform for sharing exam papers with JWT auth, role-based access, Cloudinary storage, and AI upload integration.",
     technologies: ["React", "Node.js", "MongoDB", "Cloudinary", "AI"],
+    image: "/images/moilearn.jpeg",
     live: "https://moilearn.vercel.app",
-    github: "https://github.com/jo-oseeph/moilearn-frontend",
   },
   {
     id: 3,
-    icon: <FaSpa size={20} className="text-cyan-400" />,
     category: "Wellness",
     title: "Serene Spa",
     description:
       "Responsive spa website built with React and Tailwind, focused on clean UI and seamless user experience.",
     technologies: ["React", "TailwindCSS"],
+    image: "/images/spa.jpeg",
     live: "https://serenspa.vercel.app",
-    github: "https://github.com/jo-oseeph/Spa",
   },
 ];
 
@@ -85,58 +93,79 @@ const Projects = () => {
               key={project.id}
               variants={cardVariants}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-[#111] border border-cyan-400/20 rounded-2xl p-7 flex flex-col gap-5 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-colors duration-300"
+              className="bg-[#111] border border-cyan-400/20 rounded-2xl overflow-hidden flex flex-col hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-colors duration-300"
             >
-              {/* Icon + Badge */}
-              <div className="flex items-center justify-between">
-                <div className="w-9 h-9 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center">
-                  {project.icon}
+              {/* Image */}
+              {project.image && (
+                <div className="p-3 pb-0">
+                  <div className="w-full h-44 rounded-xl overflow-hidden border border-cyan-400/10">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
                 </div>
-                <span className="text-xs text-gray-400 border border-[#2a2a2a] rounded-full px-3 py-1">
-                  {project.category}
-                </span>
-              </div>
+              )}
 
-              {/* Title + Description */}
-              <div className="flex flex-col gap-2 flex-grow">
-                <h3 className="text-white font-semibold text-[15px]">
-                  {project.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
+              {/* Card Body */}
+              <div className="p-6 flex flex-col gap-4 flex-grow">
 
-              {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs text-gray-400 border border-[#252525] rounded-md px-2.5 py-1"
-                  >
-                    {tech}
+                {/* Badge */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-cyan-400/70 border border-cyan-400/20 rounded-full px-3 py-1 bg-cyan-400/5">
+                    {project.category}
                   </span>
-                ))}
-              </div>
+                </div>
 
-              {/* Links */}
-              <div className="flex items-center gap-4">
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200"
-                >
-                  View project →
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-400 transition-colors duration-200"
-                >
-                  <FaGithub size={15} />
-                </a>
+                {/* Title + Description */}
+                <div className="flex flex-col gap-2 flex-grow">
+                  <h3 className="text-white font-semibold text-[15px]">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tech Tags */}
+                {project.technologies?.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs text-gray-400 border border-[#252525] rounded-md px-2.5 py-1"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Links */}
+                <div className="flex items-center gap-4 pt-1">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200"
+                    >
+                      View project →
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-gray-400 transition-colors duration-200"
+                    >
+                      <FaGithub size={15} />
+                    </a>
+                  )}
+                </div>
+
               </div>
             </motion.div>
           ))}
