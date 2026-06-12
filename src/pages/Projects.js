@@ -45,13 +45,13 @@ const projects = [
   },
   {
     id: 5,
-    category: "Mobile",
+    category: "Ecommerce",
     title: "Ecommerce Mobile App",
     description:
       "Cross-platform ecommerce mobile application built with React Native and Expo, featuring backend services powered by Node.js and Express for authentication, product management, and order handling.",
     technologies: ["React Native", "Expo", "Node.js", "Express"],
     image: "/images/ecommerce.png",
-    github: "https://github.com/your-username/your-repo",
+    github: "https://github.com/jo-oseeph/Skin-Care-App",
   },
 ];
 
