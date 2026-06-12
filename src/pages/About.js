@@ -1,16 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaCode, FaBriefcase, FaGraduationCap, FaMobile } from 'react-icons/fa';
 import { MdWorkHistory } from 'react-icons/md';
 import { BsStack } from 'react-icons/bs';
 import { HiOutlineCloud } from 'react-icons/hi';
-import { RiRobot2Line } from 'react-icons/ri';
+
 
 const stats = [
   { icon: <MdWorkHistory size={22} className="text-cyan-400" />, value: '2+ years', label: 'Professional experience' },
   { icon: <BsStack size={22} className="text-cyan-400" />, value: 'Full-stack', label: 'Web & backend engineering' },
+  { icon: <FaMobile size={22} className="text-cyan-400" />, value: 'Mobile apps', label: 'React Native development' },
   { icon: <HiOutlineCloud size={22} className="text-cyan-400" />, value: 'Multi-cloud', label: 'Cloud deployments' },
-  { icon: <RiRobot2Line size={22} className="text-cyan-400" />, value: 'AI integration', label: 'AI-powered applications' },
+ 
 ];
 
 const experiences = [

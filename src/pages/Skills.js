@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaReact, FaNodeJs, FaJs, FaAws, FaGitAlt, FaServer, FaHtml5,
+  FaReact, FaNodeJs, FaJs, FaAws, FaGitAlt, FaServer, FaHtml5,FaMobile,
 } from "react-icons/fa";
 import {
   SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiSupabase,
@@ -14,6 +14,7 @@ const categories = [
     icon: <FaReact size={20} className="text-cyan-400" />,
     skills: [
       { name: "React / Next.js", icon: <FaReact size={15} className="text-cyan-400" /> },
+      { name: "React Native", icon: <FaMobile size={15} className="text-cyan-400" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss size={15} className="text-teal-400" /> },
       { name: "JavaScript ES6+", icon: <FaJs size={15} className="text-yellow-400" /> },
       { name: "HTML & CSS", icon: <FaHtml5 size={15} className="text-orange-400" /> },
