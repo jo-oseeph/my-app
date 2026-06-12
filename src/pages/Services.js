@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   FaCode, FaPalette, FaServer,
-  FaDatabase, FaMobileAlt, FaPencilRuler
+  FaDatabase, FaMobileAlt, FaMobile,
 } from 'react-icons/fa';
 
 const services = [
@@ -10,37 +10,37 @@ const services = [
     icon: <FaCode size={20} className="text-cyan-400" />,
     category: 'Development',
     title: 'Custom Website Development',
-    description: 'Building tailor-made websites from scratch that perfectly align with your business goals and brand identity, ensuring optimal performance and user experience.',
+    description: 'Building production-ready websites tailored to business requirements with a focus on performance, clean structure, and scalability.',
   },
   {
-    icon: <FaPalette size={20} className="text-cyan-400" />,
-    category: 'Development',
+    icon: <FaMobile size={20} className="text-cyan-400" />,
+    category: 'Mobile',
     title: 'Mobile App Development',
-    description: 'Building high-performance, scalable mobile applications with seamless user experiences, leveraging modern frameworks to deliver responsive, secure, and feature-rich apps across Android and iOS platforms.',
+    description: 'Developing cross-platform mobile applications with React Native, focused on performance, reliability, and smooth user interaction.',
   },
   {
     icon: <FaServer size={20} className="text-cyan-400" />,
     category: 'Backend',
     title: 'Backend API Development',
-    description: 'Developing robust, scalable RESTful APIs and server-side logic that power your applications with security, efficiency, and seamless data management.',
+    description: 'Designing and implementing secure RESTful APIs and server logic using Node.js and Express with structured data handling.',
   },
   {
     icon: <FaDatabase size={20} className="text-cyan-400" />,
     category: 'Database',
     title: 'Database Design & Integration',
-    description: 'Architecting efficient database structures and seamlessly integrating them with your applications for optimal data storage, retrieval, and management.',
+    description: 'Designing efficient MongoDB data models and integrating them into applications for consistent and optimized data flow.',
   },
   {
     icon: <FaMobileAlt size={20} className="text-cyan-400" />,
-    category: 'Mobile',
-    title: 'Responsive & Mobile-First Layouts',
-    description: 'Crafting fluid, adaptive designs that deliver exceptional experiences across all devices, from smartphones to desktops, with a mobile-first approach.',
+    category: 'Software',
+    title: 'Custom Software Development',
+    description: 'Building full-stack web and mobile applications with integrated frontend, backend, and database systems.',
   },
   {
-    icon: <FaPencilRuler size={20} className="text-cyan-400" />,
-    category: 'Branding',
-    title: 'Branding Assets & Graphic Design',
-    description: 'Designing compelling visual identities, logos, and graphic assets that capture your brand essence and create lasting impressions on your audience.',
+    icon: <FaPalette size={20} className="text-cyan-400" />,
+    category: 'Design',
+    title: 'Branding & Visual Design',
+    description: 'Creating brand identities, logos, and visual assets that support clear communication and consistent brand presence.',
   },
 ];
 

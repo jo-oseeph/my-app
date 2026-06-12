@@ -12,7 +12,6 @@ const projects = [
     technologies: ["React", "Node.js", "MongoDB"],
     image: "/images/cyber.png",
     live: "https://www.cybextech.co.ke/",
-    
   },
   {
     id: 4,
@@ -43,6 +42,16 @@ const projects = [
     technologies: ["React", "TailwindCSS"],
     image: "/images/spa.png",
     live: "https://serenspa.vercel.app",
+  },
+  {
+    id: 5,
+    category: "Mobile",
+    title: "Ecommerce Mobile App",
+    description:
+      "Cross-platform ecommerce mobile application built with React Native and Expo, featuring backend services powered by Node.js and Express for authentication, product management, and order handling.",
+    technologies: ["React Native", "Expo", "Node.js", "Express"],
+    image: "/images/ecommerce.png",
+    github: "https://github.com/your-username/your-repo",
   },
 ];
 
