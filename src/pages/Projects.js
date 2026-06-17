@@ -58,7 +58,7 @@ const projects = [
   category: "Marketplace",
   title: "Mtaa Market",
   description:
-    "Location-based second-hand marketplace that enables users to buy and sell pre-owned items within their preferred areas. Sellers can create accounts, manage listings, upload product details, and specify locations, while buyers can discover products, filter by location, and connect directly with sellers for transactions.",
+  "Location-based second-hand marketplace enabling users to discover, filter, and purchase pre-owned items within their preferred areas, with direct seller communication.",  
   technologies: ["React", "Node.js", "Express", "MongoDB", "Cloudinary"],
   image: "/images/market.png",
   live: "https://mtaamarket.vercel.app/",
