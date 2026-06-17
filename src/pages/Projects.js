@@ -53,6 +53,16 @@ const projects = [
     image: "/images/ecommerce.png",
     github: "https://github.com/jo-oseeph/Skin-Care-App",
   },
+  {
+  id: 6,
+  category: "Marketplace",
+  title: "Mtaa Market",
+  description:
+    "Location-based second-hand marketplace that enables users to buy and sell pre-owned items within their preferred areas. Sellers can create accounts, manage listings, upload product details, and specify locations, while buyers can discover products, filter by location, and connect directly with sellers for transactions.",
+  technologies: ["React", "Node.js", "Express", "MongoDB", "Cloudinary"],
+  image: "/images/market.png",
+  live: "https://mtaamarket.vercel.app/",
+},
 ];
 
 const containerVariants = {
