@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt } from "react-icons/fa";
 
-const roles = ["FullStack Developer", "AI Enthusiast", "Graphic Designer"];
+const roles = ["FullStack Developer", "React Native Developer", "MERN Stack Developer"];
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, delay, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay, ease: "easeOut" },
+  },
 });
 
 const Home = () => {
@@ -32,7 +36,7 @@ const Home = () => {
       setDisplayed(
         typing
           ? current.slice(0, displayed.length + 1)
-          : current.slice(0, displayed.length - 1)
+          : current.slice(0, displayed.length - 1),
       );
     }, delay);
     return () => clearTimeout(timeout);
@@ -43,7 +47,6 @@ const Home = () => {
       <section className="flex-grow flex items-center px-6 md:px-12 lg:px-20 pt-20 pb-12">
         <div className="max-w-6xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
             {/* Left — Text */}
             <motion.div
               className="flex flex-col gap-6 order-2 lg:order-1"
@@ -67,12 +70,16 @@ const Home = () => {
                 variants={fadeUp(0.1)}
                 className="text-gray-500 text-sm md:text-base leading-relaxed max-w-lg"
               >
-                I build scalable web and mobile applications with a focus on
-                performance, clean architecture, and real-world usability. I
-                turn ideas into reliable digital products.
+                I build full-stack web and mobile applications that solve
+                real-world problems. From student platforms and marketplaces to
+                ecommerce solutions, I focus on creating scalable, user-centered
+                products with modern technologies.
               </motion.p>
 
-              <motion.div variants={fadeUp(0.2)} className="flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp(0.2)}
+                className="flex flex-wrap gap-3"
+              >
                 <a
                   href="#contact"
                   className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors duration-200"
@@ -91,11 +98,23 @@ const Home = () => {
                 </a>
               </motion.div>
 
-              <motion.div variants={fadeUp(0.3)} className="flex items-center gap-3">
+              <motion.div
+                variants={fadeUp(0.3)}
+                className="flex items-center gap-3"
+              >
                 {[
-                  { href: "https://github.com/jo-oseeph", icon: <FaGithub size={16} /> },
-                  { href: "https://www.linkedin.com/in/joseph-situma-2876ab391/", icon: <FaLinkedinIn size={16} /> },
-                  { href: "mailto:stumajoseph1261@gmail.com", icon: <FaEnvelope size={15} /> },
+                  {
+                    href: "https://github.com/jo-oseeph",
+                    icon: <FaGithub size={16} />,
+                  },
+                  {
+                    href: "https://www.linkedin.com/in/joseph-situma-2876ab391/",
+                    icon: <FaLinkedinIn size={16} />,
+                  },
+                  {
+                    href: "mailto:stumajoseph1261@gmail.com",
+                    icon: <FaEnvelope size={15} />,
+                  },
                 ].map(({ href, icon }, i) => (
                   <a
                     key={i}
@@ -134,11 +153,12 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7, duration: 0.4 }}
                 >
-                  <p className="text-cyan-400 text-xs font-semibold">Open to work</p>
+                  <p className="text-cyan-400 text-xs font-semibold">
+                    Open to work
+                  </p>
                 </motion.div>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
