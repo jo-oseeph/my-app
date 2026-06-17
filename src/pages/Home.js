@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaFileAlt,
+  FaInstagram,
+} from "react-icons/fa";
 
-const roles = ["FullStack Developer", "React Native Developer", "MERN Stack Developer"];
+const roles = [
+  "FullStack Developer",
+  "React Native Developer",
+  "MERN Stack Developer",
+];
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 24 },
@@ -97,10 +107,9 @@ const Home = () => {
                   View Resume
                 </a>
               </motion.div>
-
               <motion.div
                 variants={fadeUp(0.3)}
-                className="flex items-center gap-3"
+                className="flex items-center justify-between sm:justify-start sm:gap-3 w-full sm:w-auto"
               >
                 {[
                   {
@@ -114,6 +123,10 @@ const Home = () => {
                   {
                     href: "mailto:stumajoseph1261@gmail.com",
                     icon: <FaEnvelope size={15} />,
+                  },
+                  {
+                    href: "https://www.instagram.com/yourhandle",
+                    icon: <FaInstagram size={16} />,
                   },
                 ].map(({ href, icon }, i) => (
                   <a
