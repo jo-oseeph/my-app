@@ -81,7 +81,7 @@ const Home = () => {
                   Hire Me
                 </a>
                 <a
-                  href="/resume/JOSEPH-sCV.pdf"
+                  href="/resume/JosephCvv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border border-[#2a2a2a] hover:border-cyan-400/40 text-gray-300 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full transition-all duration-200"
